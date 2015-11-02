@@ -1,0 +1,11 @@
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 64%;
+  }
+}
