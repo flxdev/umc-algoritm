@@ -15,6 +15,7 @@
 	<div class="header">
 		<div class="content">
 			<div class="logo">
+				<a href="" class="through-link"></a>
 				<span class="name">Алгоритм</span>
 				<span class="detailed">Автошкола ДОСААФ</span>
 			</div>
@@ -27,8 +28,8 @@
 					</div>
 				</div>
 				<div class="contact">
-					<div class="number one">8 (499) 164-7116</div>
-					<div class="number two">8 (499) 166-3048</div>
+					<div class="number one"><a href="tel:84991647116" class="through-link"></a>8 (499) 164-7116</div>
+					<div class="number two"><a href="tel:84991663048" class="through-link"></a>8 (499) 166-3048</div>
 				</div>
 			</div>
 			<div class="nav">
@@ -108,30 +109,32 @@
 			</div>
 		</div> <!-- /.sidebar -->
 		<div class="main equal-field">
-			<div class="card block card-widget full-screen-card">
+			<div class="card-widget">
 				<div class="breadcrumbs">
-					<div class="breadcrumb"><a href="" class="active_link__bc">Главная</a></div>
-					<div class="breadcrumb"><a href="">Обучение</a></div>
+					<div class="breadcrumb"><a href="" class="">Главная</a></div>
+					<div class="breadcrumb"><span>Обучение</span></div>
 				</div>
 				<h1>Обучение</h1>
-				<div class="block-links">
-					<ul class="inline-list">
-						<li><a href="">Преподаватели</a></li>
-						<li><a href="">Инструкторы</a></li>
-						<li><a href="">Набор и условия обучения</a></li>
-						<li><a href="">Автопарк</a></li>
-						<li><a href="">Площадки</a></li>
-						<li><a href="">Классы</a></li>
-						<li><a href="">Учебные маршруты</a></li>
-						<li><a href="">Учебные материалы</a></li>
-						<li><a href="">Расписание экзаменов</a></li>
-						<li><a href="">Экзамены в ГИБДД</a></li>
-						<li><a href="">Занятия по психологии</a></li>
-					</ul>
-				</div>
-				<div class="text-wrapper">
-					<h2>Почему лучше всего нужно учиться водительскому мастерству именно в школе ДОСААФ?</h2>
-					<p>Это в первую очередь связано с тем, что в России существует сеть как автомобильных и объединенных технических школ, так и учебно-спортивных центров, а так же спортивно-технических клубов, которые насчитывают несколько сотен образовательных учреждений подобного рода. Эти учреждения к тому же имеют богатейший 85-летний опыт в качественной подготовке водительских кадров, при этом каждый год из их стен выпускается около 700 тыс. специалистов, что составляет около 30% всех водителей, прошедших обучение в нашей стране. И еще хотим отметить, что свыше 85% будущих водителей с первого раза сдают экзамены в ГИБДД. В образовательных заведениях нашего оборонного общества ДОСААФ уже миллионы жителей нашей страны получили водительские удостоверения и специальности.</p>
+				<div class="block">
+					<div class="block-links">
+						<ul class="inline-list">
+							<li><a href="">Преподаватели</a></li>
+							<li><a href="">Инструкторы</a></li>
+							<li><a href="">Набор и условия обучения</a></li>
+							<li><a href="">Автопарк</a></li>
+							<li><a href="">Площадки</a></li>
+							<li><a href="">Классы</a></li>
+							<li><a href="">Учебные маршруты</a></li>
+							<li><a href="">Учебные материалы</a></li>
+							<li><a href="">Расписание экзаменов</a></li>
+							<li><a href="">Экзамены в ГИБДД</a></li>
+							<li><a href="">Занятия по психологии</a></li>
+						</ul>
+					</div>
+					<div class="text-wrapper">
+						<h2>Почему лучше всего нужно учиться водительскому мастерству именно в школе ДОСААФ?</h2>
+						<p>Это в первую очередь связано с тем, что в России существует сеть как автомобильных и объединенных технических школ, так и учебно-спортивных центров, а так же спортивно-технических клубов, которые насчитывают несколько сотен образовательных учреждений подобного рода. Эти учреждения к тому же имеют богатейший 85-летний опыт в качественной подготовке водительских кадров, при этом каждый год из их стен выпускается около 700 тыс. специалистов, что составляет около 30% всех водителей, прошедших обучение в нашей стране. И еще хотим отметить, что свыше 85% будущих водителей с первого раза сдают экзамены в ГИБДД. В образовательных заведениях нашего оборонного общества ДОСААФ уже миллионы жителей нашей страны получили водительские удостоверения и специальности.</p>
+					</div>
 				</div>
 			</div>
 		</div><!-- /.main -->
@@ -173,35 +176,5 @@
 	<script src="js/stopExecutionOnTimeout.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/main.js"></script>
-	<script> 
-		(function () {
-			var elemMap = document.querySelector('.card-map_mini .map');
-			createMap(elemMap, {x: 55.798968, y: 37.767589})
-			function createMap(elem, coord) {
-				var mapOptions = {
-				    zoom: 11,
-				    scrollwheel: true,
-				    streetViewControl: true,
-				    streetViewControlOptions: {
-				            position: google.maps.ControlPosition.LEFT_TOP
-				       	},
-				    zoomControl: false,
-				    scaleControl: true,
-				    panControl: false,
-				    mapTypeControl: false,
-				    mapTypeId: google.maps.MapTypeId.ROADMAP,
-				    center: new google.maps.LatLng(coord.x, coord.y) 
-				};
-
-				var map = new google.maps.Map(elem, mapOptions);
-
-				var marker = new google.maps.Marker({
-				    position: mapOptions.center,
-				    map: map,
-				    visible: true
-				});
-			}
-        }) ();
-	</script>
 </body>
 </html>

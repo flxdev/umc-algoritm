@@ -417,9 +417,9 @@ body {
   text-indent: -9999px;
   padding: 0;
   margin: 0;
-  -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
+  -webkit-border-radius: 100%;
+     -moz-border-radius: 100%;
+          border-radius: 100%;
   width: 8px;
   height: 8px;
 }
@@ -553,7 +553,7 @@ body {
 
 .card-widget {
   position: relative;
-  padding: 2.125em 2.5em 6.66em;
+  padding: 2.125em 2.5em 5em;
 }
 
 .card-widget .card {
@@ -1388,6 +1388,7 @@ blockquote:before {
 }
 
 .card-widget_inside {
+  position: relative;
   padding: 2.125em 2.5em 5em;
 }
 
@@ -2094,7 +2095,7 @@ li[data-content] > h2 + .columns-inline {
   /* 36px / 16px */
 }
 
-.card-widget_inside .btn-write_border {
+.card-widget .btn-write_border {
   position: absolute;
   top: 3.75em;
   right: 2.5em;
@@ -2410,8 +2411,8 @@ li[data-content] > h2 + .columns-inline {
 }
 
 .grid-fourth_column {
-  margin-bottom: 4.125em;
-  /* 66px / 16px */
+  margin-bottom: 2.75em;
+  /* 44px / 16px */
 }
 
 .grid-fourth_column + div h1 {
@@ -2682,6 +2683,8 @@ li[data-content] > h2 + .columns-inline {
   /* 205px / 16px */
   margin-right: 1.375em;
   /* 22px / 16px */
+  margin-bottom: 1.375em;
+  /* 22px / 16px */
 }
 
 .card-fourth:nth-of-type(4n) {
@@ -2866,6 +2869,26 @@ li[data-content] > h2 + .columns-inline {
 
 .feedback_slider .slick-next {
   right: -5.5em;
+}
+
+.accordions {
+  margin-bottom: 3.5em;
+}
+
+a.btn {
+  display: table-cell;
+  vertical-align: middle;
+  letter-spacing: normal;
+  line-height: 3.125em;
+}
+
+.position + a.btn {
+  text-align: center;
+}
+
+.logo .through-link {
+  top: -1.3em;
+  bottom: -1.3em;
 }
 
 @-webkit-keyframes cd-fade-in {

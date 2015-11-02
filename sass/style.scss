@@ -214,7 +214,7 @@ body {
 		}
 	}
 	button {
-		box-shadow: 0;
+		box-shadow: none;
 		transition: box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
 		user-select: none;
 		background: transparent;
@@ -348,10 +348,10 @@ blockquote:before {
 		}
 	}
 }
-.difficulty:before {
+.info-bord-ico.difficulty {
 	background: url('../img/info-bord-func.png') 50% 35% no-repeat;
 }
-.distance:before {
+.info-bord-ico.distance {
 	background: url('../img/info-bord-drive.png') 50% 35% no-repeat;
 	background-size: 4.375em 4.375em; /* 70px / 16px */
 }
@@ -434,7 +434,8 @@ blockquote:before {
 	max-width: 8.125em; /* 130px / 16x */
 }
 .sidebar .category-list a:hover,
-.block-links .inline-list a:hover  {
+.block-links .inline-list a:hover,
+.breadcrumb a:hover  {
 	text-decoration: none;
 	transition: all 0.3s ease;
 }
@@ -444,4 +445,7 @@ blockquote:before {
 .header .nav.scroll-nav-active {
 	left: auto;
 	transform: none;
+}
+.card-widget {
+	background: #fff;
 }

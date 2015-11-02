@@ -263,9 +263,9 @@ body {
 }
 
 .slick-dots button {
-  -webkit-box-shadow: 0;
-     -moz-box-shadow: 0;
-          box-shadow: 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
   -webkit-transition: -webkit-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
      -moz-transition: -moz-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
           transition: box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
@@ -432,11 +432,11 @@ blockquote:before {
           box-shadow: 0 0 2px 1px rgba(242, 177, 0, 0.95);
 }
 
-.difficulty:before {
+.info-bord-ico.difficulty {
   background: url("../img/info-bord-func.png") 50% 35% no-repeat;
 }
 
-.distance:before {
+.info-bord-ico.distance {
   background: url("../img/info-bord-drive.png") 50% 35% no-repeat;
   -moz-background-size: 4.375em 4.375em;
     -o-background-size: 4.375em 4.375em;
@@ -549,7 +549,8 @@ blockquote:before {
 }
 
 .sidebar .category-list a:hover,
-.block-links .inline-list a:hover {
+.block-links .inline-list a:hover,
+.breadcrumb a:hover {
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
      -moz-transition: all 0.3s ease;
@@ -566,4 +567,8 @@ blockquote:before {
      -moz-transform: none;
       -ms-transform: none;
           transform: none;
+}
+
+.card-widget {
+  background: #fff;
 }
