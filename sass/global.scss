@@ -31,6 +31,7 @@ body {
 .footer,
 .header {
 	width: 100%;
+	min-width: 81.25em;
 	.content {
 		width: 81.25em; /* 1300px / 16px */
 		margin: 0 auto;
@@ -1023,9 +1024,13 @@ blockquote {
 	-moz-osx-font-smoothing: grayscale;
 }
 .active-overlay-place {
-	position: relative;
-	margin: 8.125% auto 8.125%; /* 130px / 1600px */
-	padding: 3.4em 5.375em 5em; 
+	position: absolute;
+	top: 15.8%;
+	margin-bottom: 15.8%;
+	left: 50%;
+    transform: translateX(-50%);
+	padding: 3.4em 5.375em 5em;
+	z-index: 10;
 }
 .active-overlay_field {
 	width: 43.125em; /* 690px / 16px */
@@ -1074,7 +1079,7 @@ blockquote {
 	    }
 	    & + label:after {
 	    	margin-top: -4.5px;
-	    	margin-left: 3.5px;
+    		margin-left: 3px;
 	    	width: 9px;
     	    height: 9px;
 	    }
@@ -1229,7 +1234,7 @@ blockquote {
 	padding-bottom: 2.8%;
 	margin-right: 1.75em; /* 28px / 16px */
 	position: relative;
-	&:before {
+	.info-bord-ico {
 		content: '';
 		display: block;
 		width: 24.1169%; /* 102px / 308px */
@@ -1691,6 +1696,7 @@ li[data-content] {
 		li {
 			position: relative;
 			float: left;
+			width: 18.2852em;
 			padding-left: 1.875em; /* 30px /16px */
 			margin-right: 3.375em; /* 54px / 16px */
 			font: normal 1em/1.75 'MuseoSansMedium';
@@ -1698,9 +1704,10 @@ li[data-content] {
 				content: '';
 			    display: block;
 			    width: 1.0625em; /* 17px / 16px */
-			    height: 100%;
+			    height: 18px;
 			    position: absolute;
 			    left: 0;
+			    top: 5px;
 			}
 			&:nth-child(2) {
 				margin-right: 0;
@@ -1764,7 +1771,7 @@ li[data-content] {
 	background: url('../img/structure.png') 0 0 no-repeat;
 	background-size: cover;
 }
-.managers + .unit-list {
+.his-list {
 	h3 {
 		margin: 0.625em 0 0.625em;
 	}
@@ -1880,13 +1887,13 @@ li[data-content] {
 	}
 }
 .slick-prev {
-	left: -3.375em; /* 54px / 16px */;
+	left: -9em; /* 54px / 16px */;
 	&:before {
 		content: '\e801';
 	}
 }
 .slick-next {
-	right: -3.375em; /* 54px / 16px */;
+	right: -9em; /* 54px / 16px */;
 	&:before {
 		content: '\e800';
 	}
@@ -1925,6 +1932,41 @@ li[data-content] {
 }
 .nav .active_link__list .wrap-list:after {
 	transform: rotate(180deg);
+}
+.nav .active_link__list .second-level {
+	min-height: 5em;
+	padding-bottom: 2.1875em;
+}
+.nav .second-level li {
+	display: inline-block;
+	height: auto;
+	padding: 2.1875em 0 0;
+}
+.number {
+	position: relative;
+}
+.not-overlay-place {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+.feedback_slider {
+	overflow: visible;
+	.slick-arrow:before,
+	.slick-arrow:after {
+		text-shadow: 0 0 3px rgba(#365ed2, 0.6);
+	}
+	.slick-prev {
+		left: -5.5em;
+	}
+	.slick-next {
+		right: -5.5em;
+	}
 }
 @keyframes cd-fade-in {
   0% {

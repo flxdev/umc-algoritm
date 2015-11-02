@@ -82,7 +82,7 @@ var eventer = new EventEmitter();
 eventer.on('loadmap', function () {
     createMap({
         selecter: '.map', 
-        coord: {x: 55.798968, y: 37.767589},
+        coord: 'data-coord',
     });
 });
 
@@ -134,7 +134,7 @@ $('.feedback_slider').slick({
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false
+    arrows: true
 });
 
 // tabs
@@ -280,9 +280,16 @@ function Overlay(config) {
         return item;
     };
 
-    
+    if (!this.overlay) {
+        return;
+    }
+
+    _eventEmmiter(_findControlElem(_activePlace), 'click', function (e) {
+        var e = e || window.event;
+        e.stopPropagation();
+    });
     _eventEmmiter(_findControlElem(_closeBtn), 'click', this.close);
-    // _eventEmmiter(_findControlElem(_activePlace), 'click', this.close);
+    _eventEmmiter(this.overlay, 'click', this.close);
     _eventEmmiter(_findControlElem(_openBtn), 'click', this.open);
 }
 
@@ -293,7 +300,7 @@ var overlayDoc = new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay-close',
     openBtn: 'card-fourth',
-    activePlace: ''
+    activePlace: 'active-overlay-place'
 });
 
 var overlayFeedBack = new Overlay({
@@ -301,7 +308,7 @@ var overlayFeedBack = new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay-close',
     openBtn: 'btn-feedback',
-    activePlace: ''
+    activePlace: 'active-overlay-place'
 });
 
 var overlayWrite = new Overlay({
@@ -309,7 +316,7 @@ var overlayWrite = new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay-close',
     openBtn: 'btn-write-overlay',
-    activePlace: ''
+    activePlace: 'active-overlay-place'
 });
 
 var overlayQuestion = new Overlay({
@@ -317,7 +324,7 @@ var overlayQuestion = new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay-close',
     openBtn: 'btn-question',
-    activePlace: ''
+    activePlace: 'active-overlay-place'
 });
 
 var overlayCall = new Overlay({
@@ -325,7 +332,7 @@ var overlayCall = new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay_call',
     openBtn: 'btn-call',
-    activePlace: ''
+    activePlace: 'active-overlay-place'
 });
 
 var overlayMap= new Overlay({
@@ -333,7 +340,7 @@ var overlayMap= new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay_map',
     openBtn: 'btn-where',
-    activePlace: ''
+    activePlace: 'active-overlay-place'
 });
 
 // let blocks have equal height
@@ -398,16 +405,10 @@ equalBlocks('.right-column .column');
     if (!document.querySelector('.map')) {
         return;
     }
-        var parent = document.documentElement.body || document.body;
-        
-        var script = document.createElement('script');
-        script.setAttribute('src', 'https://maps.googleapis.com/maps/api/js');
-        
-        parent.appendChild(script);
 
-        addEvent(script, 'load', function () {
-            eventer.emit('loadmap');
-        });
+    addEvent(window, 'load', function () {
+        eventer.emit('loadmap');
+    });
 }) ();
 
 // navigation 
@@ -449,14 +450,17 @@ dropdownMenu('.nav');
 // create map
 
 function createMap(config) {
-    var elemMap = document.querySelectorAll(config.selecter);
+    var elemMap = document.querySelectorAll(config.selecter),
+    coord;
 
     if (elemMap.length <= 0) {
         return;
     }
 
     Array.prototype.forEach.call(elemMap, function (item) {
-        _configMap(item, config.coord);
+        _coordStr = item.getAttribute(config.coord).split(',');
+
+        _configMap(item, _coordStr);
     });
 
     function _configMap(elem, coord) {
@@ -472,7 +476,7 @@ function createMap(config) {
             panControl: false,
             mapTypeControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            center: new google.maps.LatLng(coord.x, coord.y) 
+            center: new google.maps.LatLng(coord[0], coord[1]) 
         };
 
         var map = new google.maps.Map(elem, mapOptions);
@@ -623,11 +627,13 @@ var feedback = ToggeleFeed({
     });
 
     addEvent(document, 'click', function (e) {
-        var e = e || window.e;
-        var target = e.target || e.srcElement;
+        var e = e || window.e,
+            target = e.target || e.srcElement,
+            accord = undefined,
+            activeAccord = undefined;
 
         while (target != this) {
-            if (target.classList.contains('js-accord')) {
+            if (target.classList.contains('js-accord-but')) {
                 break;
             }
 
@@ -638,14 +644,23 @@ var feedback = ToggeleFeed({
             return;
         }
 
-        if (!target.classList.contains('is-active')) {
+        accord = target.parentNode;
+
+        if (!accord.classList.contains('is-active')) {
             
-            target.classList.add('is-active');
-            $(target).find('.accord__block').slideDown(300);
+            activeAccord = $('.js-accord.is-active');
+            
+            if (activeAccord && activeAccord.length != 0) {
+                activeAccord[0].classList.remove('is-active');
+                $(activeAccord[0]).find('.accord__block').slideUp(300);
+            }
+
+            accord.classList.add('is-active');
+            $(accord).find('.accord__block').slideDown(300);
         } else {
             
-            target.classList.remove('is-active');
-            $(target).find('.accord__block').slideUp(300);
+            accord.classList.remove('is-active');
+            $(accord).find('.accord__block').slideUp(300);
         }
     });
 }) ();
