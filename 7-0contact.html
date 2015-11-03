@@ -9,11 +9,13 @@
 	<link rel="stylesheet" href="css/global.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 	<div class="header">
 		<div class="content">
 			<div class="logo">
+				<a href="" class="through-link"></a>
 				<span class="name">Алгоритм</span>
 				<span class="detailed">Автошкола ДОСААФ</span>
 			</div>
@@ -26,8 +28,8 @@
 					</div>
 				</div>
 				<div class="contact">
-					<div class="number one">8 (499) 164-7116</div>
-					<div class="number two">8 (499) 166-3048</div>
+					<div class="number one"><a href="tel:84991647116" class="through-link"></a>8 (499) 164-7116</div>
+					<div class="number two"><a href="tel:84991663048" class="through-link"></a>8 (499) 166-3048</div>
 				</div>
 			</div>
 			<div class="nav">
@@ -107,48 +109,50 @@
 			</div>
 		</div> <!-- /.sidebar -->
 		<div class="main equal-field">
-			<div class="card block card-widget multi-column">
+			<div class="card-widget">
 				<div class="breadcrumbs">
 					<div class="breadcrumb"><a href="" class="active_link__bc">Главная</a></div>
 					<div class="breadcrumb"><a href="">Контакты</a></div>
 				</div>
 				<h1>Контакты</h1>
-				<button class="btn btn-call">Обратный звонок</button>
-				<div class="left-column tabl_column">
-					<div class="text-wrapper">
-						<h2>Измайловский проезд, д. 11, строение 2</h2>
-					</div>
-					<div class="block billboard">
-						<div class="body-board">
-							<ul class="inline-sort-list">
-								<li>
-									<div class="category">Время работы</div>
-									<div class="value">10<sup>00</sup>–13<sup>00</sup>, выходные 10<sup>00</sup>–13<sup>00</sup></div>
-								</li>
-								<li>
-									<div class="category">Электронная почта</div>
-									<div class="value">umc_algoritm@mail.ru</div>
-								</li>
-								<li>
-									<div class="category">Телефоны</div>
-									<div class="value">8 (499) 164-7116; 8 (499) 166-3048</div>
-								</li>
-								<li>
-									<div class="category">ICQ</div>
-									<div class="value">553-178-207</div>
-								</li>
-							</ul>
+				<div class="block">
+					<button class="btn btn-call">Обратный звонок</button>
+					<div class="left-column tabl_column">
+						<div class="text-wrapper">
+							<h2>Измайловский проезд, д. 11, строение 2</h2>
+						</div>
+						<div class="block billboard">
+							<div class="body-board">
+								<ul class="inline-sort-list">
+									<li>
+										<div class="category">Время работы</div>
+										<div class="value">10<sup>00</sup>–13<sup>00</sup>, выходные 10<sup>00</sup>–13<sup>00</sup></div>
+									</li>
+									<li>
+										<div class="category">Электронная почта</div>
+										<div class="value">umc_algoritm@mail.ru</div>
+									</li>
+									<li>
+										<div class="category">Телефоны</div>
+										<div class="value">8 (499) 164-7116; 8 (499) 166-3048</div>
+									</li>
+									<li>
+										<div class="category">ICQ</div>
+										<div class="value">553-178-207</div>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="right-column tabl_column">
-					<div class="border-block_light">
-						<div class="title_column">Записаться в автошколу на обучение</div>
-						<div class="info_column">2 этаж, каб. 223</div>
-						<button class="btn btn-where"><span>Как к нам добраться?</span></button>
+					<div class="right-column tabl_column">
+						<div class="border-block_light">
+							<div class="title_column">Записаться в автошколу на обучение</div>
+							<div class="info_column">2 этаж, каб. 223</div>
+							<button class="btn btn-where"><span>Как к нам добраться?</span></button>
+						</div>
 					</div>
+					<div class="map" data-coord="-80, 11"></div>
 				</div>
-				<div class="map"></div>
 			</div><!--/.card-->
 		</div><!-- /.main -->
 	</div><!-- /.wrapper -->
@@ -207,7 +211,7 @@
 						<textarea name="" placeholder="Напишите ваш отзыв об инструкторе" id="fb-message" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" required></textarea>
 					</div>
 				</fieldset>
-				<button class="btn btn-send">Задать вопрос</button>
+				<button class="btn btn-send" type="submit">Задать вопрос</button>
 			</div>
 		</div>
 	</div>
@@ -224,6 +228,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/stopExecutionOnTimeout.min.js"></script>
 	<script src="js/slick.min.js"></script>

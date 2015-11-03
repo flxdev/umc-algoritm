@@ -449,7 +449,7 @@ blockquote:before {
   color: #fff;
 }
 
-.time:before {
+.info-bord-ico.time {
   background: url("../img/time.png") 50% 35% no-repeat;
 }
 
@@ -548,13 +548,8 @@ blockquote:before {
   /* 130px / 16x */
 }
 
-.sidebar .category-list a:hover,
-.block-links .inline-list a:hover,
-.breadcrumb a:hover {
+a:hover {
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-     -moz-transition: all 0.3s ease;
-          transition: all 0.3s ease;
 }
 
 .manager .left-column {

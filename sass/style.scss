@@ -359,7 +359,7 @@ blockquote:before {
 	background: $border-color;
 	color: #fff;
 }
-.time:before {
+.info-bord-ico.time {
 	background: url('../img/time.png') 50% 35% no-repeat;
 }
 .tabs-content li[data-content] > h2 {
@@ -433,11 +433,8 @@ blockquote:before {
 	height: 2.25em; /* 36px / 16px */
 	max-width: 8.125em; /* 130px / 16x */
 }
-.sidebar .category-list a:hover,
-.block-links .inline-list a:hover,
-.breadcrumb a:hover  {
+a:hover {
 	text-decoration: none;
-	transition: all 0.3s ease;
 }
 .manager .left-column {
 	outline: 1px solid #f7f9fd;

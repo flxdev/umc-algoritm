@@ -134,7 +134,8 @@ $('.feedback_slider').slick({
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true
+    arrows: true,
+    adaptiveHeight: true
 });
 
 // tabs
@@ -534,7 +535,7 @@ function ToggeleFeed(config) {
 
     this.open = function (e) {
         var data = _searcher(e);
-
+        
         data.active.classList.remove('hidde-toggle-field');
         $(data.notactive).slideDown(300);
     }.bind(this);
