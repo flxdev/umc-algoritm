@@ -44,7 +44,7 @@ var gulp = require('gulp'),
 
     gulp.task('js', function () {
         return  gulp.src('./js/main.js')
-            .pipe(uglify())
+            //.pipe(uglify())
             .pipe(rename({suffix: '.min'}))
             .pipe(gulp.dest('./dist/js/'));
     });

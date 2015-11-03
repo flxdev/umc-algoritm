@@ -446,3 +446,59 @@ a:hover {
 .card-widget {
 	background: #fff;
 }
+.has-error {
+	color: #e41202;
+	.error {
+		color: #e41202 !important;
+		border-color: #e41202 !important;
+		&:focus {
+			box-shadow: 0 0 2px 1px rgba(#e41202, 0.95) !important;
+		}
+	}
+}
+.has-success {
+	.valid {
+		color: #365ed2 !important;
+		border-color: #365ed2 !important;
+		&:focus {
+			box-shadow: 0 0 2px 1px rgba(#365ed2, 0.95) !important;
+		}
+	}
+}
+input,
+textarea {
+	&.error {
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-moz-placeholder,
+		&:-ms-input-placeholder,
+		[placeholder] {
+			color: #e41202 !important;
+		}
+	}
+	&.valid {
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-moz-placeholder,
+		&:-ms-input-placeholder,
+		[placeholder] {
+			color: #365ed2 !important;
+		}
+	}
+}
+.star-ratings {
+	.star-ratings-top {
+		transition: color 0.2s ease;
+	}
+}
+.form-field .star-ratings {
+	cursor: pointer;
+	span {
+		&:hover {
+			color: $sub-widget;
+		}
+	}
+	.star-ratings-top {
+		width: 20%;
+	}
+}	

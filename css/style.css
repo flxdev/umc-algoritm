@@ -567,3 +567,73 @@ a:hover {
 .card-widget {
   background: #fff;
 }
+
+.has-error {
+  color: #e41202;
+}
+
+.has-error .error {
+  color: #e41202 !important;
+  border-color: #e41202 !important;
+}
+
+.has-error .error:focus {
+  -webkit-box-shadow: 0 0 2px 1px rgba(228, 18, 2, 0.95) !important;
+     -moz-box-shadow: 0 0 2px 1px rgba(228, 18, 2, 0.95) !important;
+          box-shadow: 0 0 2px 1px rgba(228, 18, 2, 0.95) !important;
+}
+
+.has-success .valid {
+  color: #365ed2 !important;
+  border-color: #365ed2 !important;
+}
+
+.has-success .valid:focus {
+  -webkit-box-shadow: 0 0 2px 1px rgba(54, 94, 210, 0.95) !important;
+     -moz-box-shadow: 0 0 2px 1px rgba(54, 94, 210, 0.95) !important;
+          box-shadow: 0 0 2px 1px rgba(54, 94, 210, 0.95) !important;
+}
+
+input.error::-webkit-input-placeholder,
+input.error::-moz-placeholder,
+input.error:-moz-placeholder,
+input.error:-ms-input-placeholder,
+input.error [placeholder],
+textarea.error::-webkit-input-placeholder,
+textarea.error::-moz-placeholder,
+textarea.error:-moz-placeholder,
+textarea.error:-ms-input-placeholder,
+textarea.error [placeholder] {
+  color: #e41202 !important;
+}
+
+input.valid::-webkit-input-placeholder,
+input.valid::-moz-placeholder,
+input.valid:-moz-placeholder,
+input.valid:-ms-input-placeholder,
+input.valid [placeholder],
+textarea.valid::-webkit-input-placeholder,
+textarea.valid::-moz-placeholder,
+textarea.valid:-moz-placeholder,
+textarea.valid:-ms-input-placeholder,
+textarea.valid [placeholder] {
+  color: #365ed2 !important;
+}
+
+.star-ratings .star-ratings-top {
+  -webkit-transition: color 0.2s ease;
+     -moz-transition: color 0.2s ease;
+          transition: color 0.2s ease;
+}
+
+.form-field .star-ratings {
+  cursor: pointer;
+}
+
+.form-field .star-ratings span:hover {
+  color: #f2b100;
+}
+
+.form-field .star-ratings .star-ratings-top {
+  width: 20%;
+}

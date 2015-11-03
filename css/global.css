@@ -1463,7 +1463,16 @@ blockquote:before {
   height: 100%;
   top: 0;
   left: 0;
-  overflow: overlay;
+  overflow-y: scroll;
+}
+
+.active-overlay-place::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: -15.8%;
+  height: 15.8%;
 }
 
 .overlay.open {
@@ -1504,17 +1513,17 @@ blockquote:before {
 }
 
 .btn-overlay-close:before {
-  -webkit-transform: rotate(-45deg) translateY(-50%);
-     -moz-transform: rotate(-45deg) translateY(-50%);
-      -ms-transform: rotate(-45deg) translateY(-50%);
-          transform: rotate(-45deg) translateY(-50%);
+  -webkit-transform: rotate(-45deg) translateY(-55%);
+     -moz-transform: rotate(-45deg) translateY(-55%);
+      -ms-transform: rotate(-45deg) translateY(-55%);
+          transform: rotate(-45deg) translateY(-55%);
 }
 
 .btn-overlay-close:after {
-  -webkit-transform: rotate(45deg) translateY(-50%);
-     -moz-transform: rotate(45deg) translateY(-50%);
-      -ms-transform: rotate(45deg) translateY(-50%);
-          transform: rotate(45deg) translateY(-50%);
+  -webkit-transform: rotate(45deg) translateY(-45%);
+     -moz-transform: rotate(45deg) translateY(-45%);
+      -ms-transform: rotate(45deg) translateY(-45%);
+          transform: rotate(45deg) translateY(-45%);
 }
 
 .category-detailed .win-present {
@@ -2651,6 +2660,10 @@ li[data-content] > h2 + .columns-inline {
   margin-bottom: 1.25em;
 }
 
+.doc h1 {
+  margin-bottom: 3.4808% !important;
+}
+
 .card-palar {
   width: 27.0625em;
   /* 433px / 16px */
@@ -2901,6 +2914,16 @@ a.btn {
 
 .left-column + .right-column + .text-wrapper {
   clear: both;
+}
+
+.help-block.form-error {
+  margin-top: 10px;
+  display: block;
+}
+
+.pagination + .block-links {
+  margin-top: 3.5em;
+  /* 56px / 16px */
 }
 
 @-webkit-keyframes cd-fade-in {

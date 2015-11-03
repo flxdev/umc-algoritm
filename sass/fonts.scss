@@ -340,3 +340,16 @@ textarea {
 		content: '*';
 	}
 }
+.help-block.form-error {
+	font: normal 0.875em/1 'MuseoSansRegular';
+	color: #444b5f;
+}
+.overlay_success {
+	.active-overlay-place {
+		padding-bottom: 3.5em;
+	}
+	.text-wrapper {
+		font: normal 1em/1.75 'MuseoSansMedium';
+		margin-bottom: 1.5em;
+	}
+}

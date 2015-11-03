@@ -101,19 +101,6 @@ $('.card-slider').slick({
     adaptiveHeight: true
 });
 
-// 1-0ob-avtoshkole
-
-$('.slider-doc').slick({
-    dots: false,
-    fade: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    adaptiveHeight: true
-});
-
 // 2-4avtopark-vntr, 2-5ploschadki...
 
 $('.angel_slider').slick({
@@ -217,6 +204,39 @@ jQuery(document).ready(function($){
     }
 }) ();
 
+(function gallaryLongPhoto(bind) {
+    addEvent(window, 'load', function () {
+        var photos = document.querySelectorAll('[' + bind + ']'),
+            slider = document.querySelector('.slider-doc');
+
+        if (!photos || photos.length < 1 ) {
+            return;
+        }   
+
+        Array.prototype.forEach.call(photos, function (item) {
+            var container = document.createElement('div'),
+                img = document.createElement('img');
+
+                container.className = 'doc_item';
+                img.src = item.getAttribute(bind);
+                container.appendChild(img);
+                slider.appendChild(container);
+        });
+
+        eventer.on('loadgalary', function () {
+            $('.slider-doc').slick({
+                dots: false,
+                fade: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                adaptiveHeight: true
+            }); 
+        });
+    });
+})('data-full-size');
 
 /**
  * Overlay is class that creates new overlay
@@ -226,10 +246,15 @@ function Overlay(config) {
     this.overlay = config.elem;
     this.scroll = config.scroll;
     this.statusScroll = true;
+    this.callback = config.eventOpen;
 
     this.open = function () {
         this.overlay.classList.add('open');
         _scrollActive();
+
+        if (this.callback) {
+            this.callback();
+        }
     }.bind(this);
 
     this.close = function () {
@@ -301,7 +326,10 @@ var overlayDoc = new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay-close',
     openBtn: 'card-fourth',
-    activePlace: 'active-overlay-place'
+    activePlace: 'active-overlay-place',
+    eventOpen: function () {
+        eventer.emit('loadgalary')
+    }
 });
 
 var overlayFeedBack = new Overlay({
@@ -341,6 +369,13 @@ var overlayMap= new Overlay({
     scroll: true,
     closeBtn: 'btn-overlay_map',
     openBtn: 'btn-where',
+    activePlace: 'active-overlay-place'
+});
+
+var overlaySuccess = new Overlay({
+    elem: document.querySelector('.overlay_success'),
+    scroll: true,
+    closeBtn: 'btn-overlay_close',
     activePlace: 'active-overlay-place'
 });
 
@@ -535,7 +570,7 @@ function ToggeleFeed(config) {
 
     this.open = function (e) {
         var data = _searcher(e);
-        
+
         data.active.classList.remove('hidde-toggle-field');
         $(data.notactive).slideDown(300);
     }.bind(this);
@@ -659,9 +694,136 @@ var feedback = ToggeleFeed({
             accord.classList.add('is-active');
             $(accord).find('.accord__block').slideDown(300);
         } else {
-            
             accord.classList.remove('is-active');
             $(accord).find('.accord__block').slideUp(300);
         }
     });
-}) ();
+}) ()
+
+function Rating(config) {
+    this.elem = config.elem;
+    this.category = config.categoryAttr;
+    this.valueid = config.valueAttr;
+    this.star = config.star;
+    this.valueRating = {};
+
+    var _eventEmmiter = addEvent.bind(this);
+    var _findControlElem = function (id) {
+        var id = id.toString(),
+            item = undefined;
+
+        if (!id) {
+            return false;
+        }
+
+        if (document.querySelectorAll(id).length > 1) {
+            return document.querySelectorAll(id);
+        }
+
+        item = document.querySelector(id);
+
+        if (!item) {
+            return false;
+        }
+
+        return item;
+    }.bind(this);
+
+    var _searcher = function (e) {
+        var e = e || window.e;
+        var target = e.target || e.srcElement;
+
+        while (target != document) {
+            var check = target.tagName == 'SPAN' && target.parentNode.hasAttribute(this.star);
+            if (check) {
+                break;
+            }
+
+            target = target.parentNode;
+        }
+
+        if (!target || target == document) {
+            return;
+        }
+
+        return target;
+
+    }.bind(this);
+
+    _eventEmmiter(window, 'load', this.init.bind(this));
+
+    _eventEmmiter(_findControlElem(this.elem), 'click', function(e) {
+        var target = _searcher(e);
+
+        if (!target) {
+            return;
+        }
+
+        this._numeration(target);
+    }.bind(this));
+
+}
+
+Rating.prototype.init = function () {
+    var stars = document.querySelectorAll('[' + this.valueid + ']');
+
+    if (!stars || stars.length < 1) {
+        return;
+    }
+
+    Array.prototype.forEach.call(stars, function (item) {
+        var rating = item.getAttribute(this.valueid);
+
+        item.style.width = (rating * 100) / 5 + '%';
+    }.bind(this));
+};
+Rating.prototype._setting = function (target) {
+    if (!this.valueRating || this.valueRating.length < 1) {
+        return;
+    } 
+
+    var active = $(target.parentNode).find('[' + this.valueid + ']'),
+        category = target.parentNode.getAttribute(this.category),
+        ratingCount = this.valueRating[category];
+
+    active[0].style.width = (ratingCount * 100) / 5 + '%';
+};
+
+Rating.prototype._numeration = function (target) {
+    var cont = target.parentNode,
+        start = cont.children,
+        length = start.length,
+        i = 0;
+
+    for (i; i < length; i++) {
+        var category = cont.parentNode.getAttribute(this.category);
+
+        if (start[i] == target && start[i].nodeType == 1) {
+            this.valueRating[category] = i + 1;
+        }
+    }
+
+    this._setting(cont);
+
+    console.log(this.valueRating);
+};
+
+var ratings = new Rating({
+    elem: '.form-field .assessment',
+    categoryAttr: 'data-category-asses',
+    valueAttr: 'data-value-asses',
+    star: 'data-asses'
+});
+
+$.validate({
+    form: '.form-field',
+    onSuccess: function() {
+        var forms = document.querySelectorAll('.form-field'),
+            rating = ratings.valueRating;
+
+        console.log(rating);
+        // place for ajax request with
+
+        return false;
+    }
+});

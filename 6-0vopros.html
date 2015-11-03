@@ -197,56 +197,34 @@
 			<div class="active-overlay-place active-overlay_field">
 				<button class="btn btn-overlay-close">Закрыть</button>
 				<h1>Задайте вопрос</h1>
-				<fieldset>
-					<div class="row"><label for="fb-name" class="name">Фамилия и имя</label><input id="fb-name" type="text" placeholder="Константинопольский Константин Константинович"></div>
-					<div class="row">
-						<div class="left-column">
-							<label for="fb-email" class="email important_field">E-mail</label>
-							<input type="text" id="fb-email" placeholder="info@gmail.com">
+				<form action="" class="form-field">
+					<fieldset>
+						<legend>Заполните контактные данные</legend>
+						<div class="row"><label for="fb-name" class="name">Фамилия и имя</label><input id="fb-name" type="text" data-validation="length" data-validation-length="min2" data-validation-error-msg="Некорректно введенные данные" placeholder="Константинопольский Константин Константинович"></div>
+						<div class="row">
+							<div class="left-column">
+								<label for="fb-email" class="email important_field">E-mail</label>
+								<input type="text" data-validation="email" id="fb-email" data-validation-error-msg="Некорректно введенные данные" id="fb-email" placeholder="info@gmail.com">
+							</div>
+							<div class="right-column">
+								<label for="fb-phone" class="phone important_field">Телефон</label>
+								<input type="text" id="fb-phone" data-validation="custom" data-validation-error-msg="Некорректно введенные данные" data-validation-regexp="^[-0-9()+ ]+$" placeholder="+7 (000) 000-00-00">
+							</div>
 						</div>
-						<div class="right-column">
-							<label for="fb-phone" class="phone important_field">Телефон</label>
-							<input type="text" id="fb-phone" placeholder="+7 (000) 000-00-00">
+						<div class="row">
+							<label for="fb-message" class="message important_field">Сообщение</label>
+							<textarea name="" data-validation="length" data-validation-error-msg="Некорректно введенные данные" data-validation-length="min20" placeholder="Напишите ваш вопрос" id="fb-message" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" required></textarea>
 						</div>
-					</div>
-					<div class="row">
-						<label for="fb-message" class="message important_field">Вопрос</label>
-						<textarea name="" placeholder="Напишите ваш отзыв об инструкторе" id="fb-message" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" required></textarea>
-					</div>
-				</fieldset>
-				<button class="btn btn-send" type="submit">Задать вопрос</button>
-			</div>
-		</div>
-	</div>
-	<div class="overlay overlay_layer overlay_question">
-		<div class="heplper-overlay-layer">
-			<div class="active-overlay-place active-overlay_field">
-				<button class="btn btn-overlay-close">Закрыть</button>
-				<h1>Задайте вопрос</h1>
-				<fieldset>
-					<div class="row"><label for="fb-name" class="name">Фамилия и имя</label><input id="fb-name" type="text" placeholder="Константинопольский Константин Константинович"></div>
-					<div class="row">
-						<div class="left-column">
-							<label for="fb-email" class="email important_field">E-mail</label>
-							<input type="text" id="fb-email" placeholder="info@gmail.com">
-						</div>
-						<div class="right-column">
-							<label for="fb-phone" class="phone important_field">Телефон</label>
-							<input type="text" id="fb-phone" placeholder="+7 (000) 000-00-00">
-						</div>
-					</div>
-					<div class="row">
-						<label for="fb-message" class="message important_field">Вопрос</label>
-						<textarea name="" placeholder="Напишите ваш отзыв об инструкторе" id="fb-message" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" required></textarea>
-					</div>
-				</fieldset>
-				<button class="btn btn-send" type="submit">Задать вопрос</button>
+					</fieldset>
+					<button class="btn btn-send" type="submit">Задать вопрос</button>
+				</form>
 			</div>
 		</div>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/stopExecutionOnTimeout.min.js"></script>
 	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.form-validator.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
