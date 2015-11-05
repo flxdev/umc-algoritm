@@ -97,7 +97,7 @@ $('.card-slider').slick({
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     adaptiveHeight: true
 });
 
@@ -109,7 +109,7 @@ $('.angel_slider').slick({
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     adaptiveHeight: true
 });
 
@@ -130,7 +130,9 @@ $('.feedback_slider').slick({
 $(document).ready(function() {
     $(".gallaries").fancybox({
         tpl: {
-            closeBtn: '<button class="btn btn-overlay-close">Закрыть</button>'
+            closeBtn: '<button class="btn btn-overlay-close">Закрыть</button>',
+            prev: '<button class="slick-prev slick-arrow"></button>',
+            next: '<button class="slick-next slick-arrow"></button>'
         },
         autoResize: true,
         autoCenter: true,

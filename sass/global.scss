@@ -651,6 +651,31 @@ body {
 		opacity: 1;
 	}
 }
+.fancybox-overlay {
+	.slick-prev {
+		left: -3.2em;
+	}
+	.slick-next {
+		right: -3.2em;
+	}
+}
+.slick-slider{
+	.slick-prev {
+		left: 1em;
+	}
+	.slick-next {
+		right: 1em;
+	}
+	.slick-arrow {
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+	&:hover {
+		.slick-arrow {
+			opacity: 1;
+		}
+	}
+}
 .left-column > img {
 	display: block;
 	width: 100%;
