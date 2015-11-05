@@ -304,7 +304,8 @@ blockquote:before {
 .total_rating dd {
 	color: $sub-widget;
 }
-.overlay {
+.overlay,
+.fancybox-overlay {
 	background: rgba($active_color, 0.95);
 }
 .btn-overlay-close {

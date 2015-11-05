@@ -125,60 +125,76 @@ $('.feedback_slider').slick({
     adaptiveHeight: true
 });
 
+// fancybox
+
+$(document).ready(function() {
+    $(".gallaries").fancybox({
+        tpl: {
+            closeBtn: '<button class="btn btn-overlay-close">Закрыть</button>'
+        },
+        autoResize: true,
+        autoCenter: true,
+        maxWidth: 480,
+        openEffect: 'fade',
+        openSpeed: 300,
+        openOpacity: true
+    });
+});
+
 // tabs
 
-jQuery(document).ready(function($){
-    var tabs = $('.tabs');
+// jQuery(document).ready(function($){
+//     var tabs = $('.tabs');
     
-    tabs.each(function(){
-        var tab = $(this),
-            tabItems = tab.find('ul.tabs-navigation'),
-            tabContentWrapper = tab.children('.tabs-content'),
-            tabNavigation = tab.find('.tabs-navigation');
+//     tabs.each(function(){
+//         var tab = $(this),
+//             tabItems = tab.find('ul.tabs-navigation'),
+//             tabContentWrapper = tab.children('.tabs-content'),
+//             tabNavigation = tab.find('.tabs-navigation');
 
-        tabItems.on('click', 'a', function(event){
-            event.preventDefault();
-            var selectedItem = $(this);
-            if( !selectedItem.hasClass('active_link') ) {
-                var selectedTab = selectedItem.data('content'),
-                    selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]');
+//         tabItems.on('click', 'a', function(event){
+//             event.preventDefault();
+//             var selectedItem = $(this);
+//             if( !selectedItem.hasClass('active_link') ) {
+//                 var selectedTab = selectedItem.data('content'),
+//                     selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]');
                 
-                tabItems.find('a.active_link').removeClass('active_link');
-                selectedItem.addClass('active_link');
-                selectedContent.addClass('active_tab').siblings('li').removeClass('active_tab');
+//                 tabItems.find('a.active_link').removeClass('active_link');
+//                 selectedItem.addClass('active_link');
+//                 selectedContent.addClass('active_tab').siblings('li').removeClass('active_tab');
 
-                var slectedContentHeight = selectedContent.innerHeight();
-                tabContentWrapper.animate({
-                    'height': slectedContentHeight
-                }, 200);
-                eventer.emit('loadmap');
-            }
-        });
+//                 var slectedContentHeight = selectedContent.innerHeight();
+//                 tabContentWrapper.animate({
+//                     'height': slectedContentHeight
+//                 }, 200);
+//                 eventer.emit('loadmap');
+//             }
+//         });
 
-        checkScrolling(tabNavigation);
-        tabNavigation.on('scroll', function(){ 
-            checkScrolling($(this));
-        });
-    });
+//         checkScrolling(tabNavigation);
+//         tabNavigation.on('scroll', function(){ 
+//             checkScrolling($(this));
+//         });
+//     });
     
-    $(window).on('resize', function(){
-        tabs.each(function(){
-            var tab = $(this);
-            checkScrolling(tab.find('.tabs-navigation'));
-            tab.find('.tabs-content').css('height', 'auto');
-        });
-    });
+//     $(window).on('resize', function(){
+//         tabs.each(function(){
+//             var tab = $(this);
+//             checkScrolling(tab.find('.tabs-navigation'));
+//             tab.find('.tabs-content').css('height', 'auto');
+//         });
+//     });
 
-    function checkScrolling(tabs){
-        var totalTabWidth = parseInt(tabs.width()),
-            tabsViewport = parseInt(tabs.width());
-        if( tabs.scrollLeft() >= totalTabWidth - tabsViewport) {
-            tabs.parent('.tabs').addClass('is-ended');
-        } else {
-            tabs.parent('.tabs').removeClass('is-ended');
-        }
-    }
-});
+//     function checkScrolling(tabs){
+//         var totalTabWidth = parseInt(tabs.width()),
+//             tabsViewport = parseInt(tabs.width());
+//         if( tabs.scrollLeft() >= totalTabWidth - tabsViewport) {
+//             tabs.parent('.tabs').addClass('is-ended');
+//         } else {
+//             tabs.parent('.tabs').removeClass('is-ended');
+//         }
+//     }
+// });
 
 // scroll menu 
 
@@ -204,40 +220,6 @@ jQuery(document).ready(function($){
     }
 }) ();
 
-(function gallaryLongPhoto(bind) {
-    addEvent(window, 'load', function () {
-        var photos = document.querySelectorAll('[' + bind + ']'),
-            slider = document.querySelector('.slider-doc');
-
-        if (!photos || photos.length < 1 ) {
-            return;
-        }   
-
-        Array.prototype.forEach.call(photos, function (item) {
-            var container = document.createElement('div'),
-                img = document.createElement('img');
-
-                container.className = 'doc_item';
-                img.src = item.getAttribute(bind);
-                container.appendChild(img);
-                slider.appendChild(container);
-        });
-
-        eventer.on('loadgalary', function () {
-            $('.slider-doc').slick({
-                dots: false,
-                fade: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                adaptiveHeight: true
-            }); 
-        });
-    });
-})('data-full-size');
-
 /**
  * Overlay is class that creates new overlay
  * @param {object} config 
@@ -251,6 +233,9 @@ function Overlay(config) {
     this.open = function () {
         this.overlay.classList.add('open');
         _scrollActive();
+
+        _sizingOverlay();
+        this.overlay.scrollTop = 0;
 
         if (this.callback) {
             this.callback();
@@ -266,6 +251,18 @@ function Overlay(config) {
     var _openBtn = config.openBtn;
     var _activePlace = config.activePlace;
     var _eventEmmiter = addEvent.bind(this);
+
+    var _sizingOverlay = function () {
+        var sizes = this.overlay.querySelector('.'+_activePlace).getBoundingClientRect();
+
+        if (sizes.height >= window.innerHeight) {
+            this.overlay.classList.add('big-overlay');
+        } else if (this.overlay.classList.contains('big-overlay')) {
+            this.overlay.classList.remove('big-overlay');
+        } else {
+            return;
+        }
+    }.bind(this);
 
     var _scrollActive = function (callback) {
         if (!this.scroll) {
@@ -321,16 +318,16 @@ function Overlay(config) {
 
 // overlay
 
-var overlayDoc = new Overlay({
-    elem: document.querySelector('.overlay_doc'),
-    scroll: true,
-    closeBtn: 'btn-overlay-close',
-    openBtn: 'card-fourth',
-    activePlace: 'active-overlay-place',
-    eventOpen: function () {
-        eventer.emit('loadgalary')
-    }
-});
+// var overlayDoc = new Overlay({
+//     elem: document.querySelector('.overlay_doc'),
+//     scroll: true,
+//     closeBtn: 'btn-overlay-close',
+//     openBtn: 'card-fourth',
+//     activePlace: 'active-overlay-place',
+//     eventOpen: function () {
+//         eventer.emit('loadgalary')
+//     }
+// });
 
 var overlayFeedBack = new Overlay({
     elem: document.querySelector('.overlay_feedback'),
@@ -434,6 +431,10 @@ equalBlocks('.wrapper .equal-field');
 // 2-1prepodavateli-vntr, 2-2instructory-vntr
 
 equalBlocks('.right-column .column');
+
+// 0-0index
+
+equalBlocks('.multi-column .hot-card');
 
 // map initialization
 (function () {

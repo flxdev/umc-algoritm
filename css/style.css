@@ -374,7 +374,8 @@ blockquote:before {
   color: #f2b100;
 }
 
-.overlay {
+.overlay,
+.fancybox-overlay {
   background: rgba(43, 79, 184, 0.95);
 }
 
