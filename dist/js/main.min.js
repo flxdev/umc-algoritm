@@ -709,8 +709,66 @@ function Rating(config) {
     this.valueid = config.valueAttr;
     this.star = config.star;
     this.valueRating = {};
+    this.activeLine = config.activeLine;
 
+    var helpers = {
+        1: 'плохо',
+        2: 'ниже среднего',
+        3: 'нормально',
+        4: 'хорошо',
+        5: 'отлично'
+    };
     var _eventEmmiter = addEvent.bind(this);
+    var _colorStar = function (e, event) {
+        if (!e) {
+            return;
+        }
+
+        var sizes = e.getBoundingClientRect();
+
+        if (!sizes) {
+            return;
+        }
+
+        var por, countStar = null;
+
+        if (event.clientY > sizes.top && event.clientY < sizes.bottom) {
+            if (event.clientX > sizes.left && event.clientX < sizes.right) {
+                por = (event.clientX - sizes.left) / sizes.width * 100;
+                countStar = Math.floor(5 * por / 100);
+            }
+        }
+
+        var stars = e.querySelectorAll('.' + this.activeLine + ' span');
+
+        Array.prototype.forEach.call(stars, function(item, i) {
+            if (i <= countStar) {
+                item.style.color = '#f2b100';
+            } else {
+                item.style.color = "#ededed";
+            }
+        });
+    }.bind(this);
+    var _mouseFulling = function(e) {
+        var e = e || window.e;
+        var target = e.target || e.srcElement;
+
+        while (target != document) {
+            var check = target.tagName == 'DD';
+            if (check) {
+                break;
+            }
+
+            target = target.parentNode;
+        }
+
+        if (!target || target == document) {
+            return;
+        }
+
+       _colorStar(target, e);
+    };
+
     var _findControlElem = function (id) {
         var id = id.toString(),
             item = undefined;
@@ -754,7 +812,12 @@ function Rating(config) {
     }.bind(this);
 
     _eventEmmiter(window, 'load', this.init.bind(this));
-
+    _eventEmmiter(_findControlElem('['+this.category+']'), 'mousemove', function(e) {
+        _mouseFulling(e);
+    }.bind(this));
+    _eventEmmiter(_findControlElem('['+this.category+']'), 'mouseleave', function(e) {
+        _mouseFulling(e);
+    }.bind(this));
     _eventEmmiter(_findControlElem(this.elem), 'click', function(e) {
         var target = _searcher(e);
 
@@ -815,7 +878,8 @@ var ratings = new Rating({
     elem: '.form-field .assessment',
     categoryAttr: 'data-category-asses',
     valueAttr: 'data-value-asses',
-    star: 'data-asses'
+    star: 'data-asses',
+    activeLine: 'star-ratings-bottom'
 });
 
 $.validate({
