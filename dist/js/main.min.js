@@ -4,7 +4,7 @@ function addEvent(el, event, callback) {
     var check1 = el === window || el === document;
 
     if (el !== undefined && el.nodeType) {
-        var pro =  el.nodeType;
+        var pro = el.nodeType;
     } else {
         pro = undefined;
     }
@@ -14,7 +14,7 @@ function addEvent(el, event, callback) {
     if (!check1 && check2) {
         var temp = undefined;
 
-        Array.prototype.forEach.call(el, function (item) {
+        Array.prototype.forEach.call(el, function(item) {
             temp = item;
             on(temp, event, callback);
         });
@@ -27,16 +27,16 @@ function addEvent(el, event, callback) {
 
 function on(el, event, callback) {
     if (el.addEventListener) {
-      el.addEventListener(event, callback, false); 
-    } else if (el.attachEvent)  {
-      el.attachEvent(event, callback);
+        el.addEventListener(event, callback, false);
+    } else if (el.attachEvent) {
+        el.attachEvent(event, callback);
     }
 }
 
 // eventemitter
 
 function EventEmitter() {
-    this.on = function (event, handler) {
+    this.on = function(event, handler) {
         if (!this._listHandlers) {
             this._listHandlers = {}
         }
@@ -48,21 +48,21 @@ function EventEmitter() {
         this._listHandlers[event].push(handler);
     };
 
-    this.off = function (event, handler) {
+    this.off = function(event, handler) {
         var handlers = this._listHandlers && this._listHandlers[event];
 
         if (!handlers) {
             return;
         }
 
-        for (var i = 0; i <= handlers.length; i++ ) {
+        for (var i = 0; i <= handlers.length; i++) {
             if (handlers[i] == handler) {
                 handlers.splice(i - 1, 1);
             }
         }
     };
 
-    this.emit = function (event) {
+    this.emit = function(event) {
         if (!this._listHandlers || !this._listHandlers[event]) {
             return;
         }
@@ -79,9 +79,9 @@ var eventer = new EventEmitter();
 
 // config map
 
-eventer.on('loadmap', function () {
+eventer.on('loadmap', function() {
     createMap({
-        selecter: '.map', 
+        selecter: '.map',
         coord: 'data-coord',
     });
 });
@@ -147,7 +147,7 @@ $(document).ready(function() {
 
 // jQuery(document).ready(function($){
 //     var tabs = $('.tabs');
-    
+
 //     tabs.each(function(){
 //         var tab = $(this),
 //             tabItems = tab.find('ul.tabs-navigation'),
@@ -160,7 +160,7 @@ $(document).ready(function() {
 //             if( !selectedItem.hasClass('active_link') ) {
 //                 var selectedTab = selectedItem.data('content'),
 //                     selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]');
-                
+
 //                 tabItems.find('a.active_link').removeClass('active_link');
 //                 selectedItem.addClass('active_link');
 //                 selectedContent.addClass('active_tab').siblings('li').removeClass('active_tab');
@@ -178,7 +178,7 @@ $(document).ready(function() {
 //             checkScrolling($(this));
 //         });
 //     });
-    
+
 //     $(window).on('resize', function(){
 //         tabs.each(function(){
 //             var tab = $(this);
@@ -200,14 +200,14 @@ $(document).ready(function() {
 
 // scroll menu 
 
-(function () {
+(function() {
     var nav = document.querySelector('.header .nav');
     srollToElem(nav);
 
     function srollToElem(elem) {
         var flagScrollElem = false;
 
-        addEvent(window, 'scroll', function (e) {
+        addEvent(window, 'scroll', function(e) {
             var elemSize = elem.getBoundingClientRect();
             var parentElemSize = elem.parentNode.parentNode.getBoundingClientRect();
 
@@ -220,7 +220,7 @@ $(document).ready(function() {
             }
         });
     }
-}) ();
+})();
 
 /**
  * Overlay is class that creates new overlay
@@ -232,7 +232,7 @@ function Overlay(config) {
     this.statusScroll = true;
     this.callback = config.eventOpen;
 
-    this.open = function () {
+    this.open = function() {
         this.overlay.classList.add('open');
         _scrollActive();
 
@@ -244,7 +244,7 @@ function Overlay(config) {
         }
     }.bind(this);
 
-    this.close = function () {
+    this.close = function() {
         this.overlay.classList.remove('open');
         _scrollActive();
     }.bind(this);
@@ -254,8 +254,8 @@ function Overlay(config) {
     var _activePlace = config.activePlace;
     var _eventEmmiter = addEvent.bind(this);
 
-    var _sizingOverlay = function () {
-        var sizes = this.overlay.querySelector('.'+_activePlace).getBoundingClientRect();
+    var _sizingOverlay = function() {
+        var sizes = this.overlay.querySelector('.' + _activePlace).getBoundingClientRect();
 
         if (sizes.height >= window.innerHeight) {
             this.overlay.classList.add('big-overlay');
@@ -266,7 +266,7 @@ function Overlay(config) {
         }
     }.bind(this);
 
-    var _scrollActive = function (callback) {
+    var _scrollActive = function(callback) {
         if (!this.scroll) {
             return;
         }
@@ -286,14 +286,14 @@ function Overlay(config) {
         }
     }.bind(this);
 
-    var _findControlElem = function (id) {
+    var _findControlElem = function(id) {
         if (!id) {
             return false;
         }
 
         var id = '.' + id.toString();
 
-        if(document.querySelectorAll(id).length > 1) {
+        if (document.querySelectorAll(id).length > 1) {
             return document.querySelectorAll(id);
         }
         var item = document.querySelector(id);
@@ -309,7 +309,7 @@ function Overlay(config) {
         return;
     }
 
-    _eventEmmiter(_findControlElem(_activePlace), 'click', function (e) {
+    _eventEmmiter(_findControlElem(_activePlace), 'click', function(e) {
         var e = e || window.event;
         e.stopPropagation();
     });
@@ -363,7 +363,7 @@ var overlayCall = new Overlay({
     activePlace: 'active-overlay-place'
 });
 
-var overlayMap= new Overlay({
+var overlayMap = new Overlay({
     elem: document.querySelector('.overlay_map'),
     scroll: true,
     closeBtn: 'btn-overlay_map',
@@ -380,9 +380,12 @@ var overlaySuccess = new Overlay({
 
 // let blocks have equal height
 
-var equalheight = function (container) {
-    var currentTallest = 0, currentRowStart = 0, rowDivs = new Array(), $el, topPosition = 0;
-    $(container).each(function () {
+var equalheight = function(container) {
+    var currentTallest = 0,
+        currentRowStart = 0,
+        rowDivs = new Array(),
+        $el, topPosition = 0;
+    $(container).each(function() {
         $el = $(this);
         $($el).height('auto');
         topPostion = $el.position().top;
@@ -412,14 +415,14 @@ var equalheight = function (container) {
     });
 };
 
-function equalBlocks (select) {
-    addEvent(window, 'load', function () {
+function equalBlocks(select) {
+    addEvent(window, 'load', function() {
         equalheight(select);
     });
 
-    addEvent(window, 'resize', function () {
+    addEvent(window, 'resize', function() {
         equalheight(select);
-    }); 
+    });
 }
 
 // 2-2instructorys, 2-1prepodavateli
@@ -439,28 +442,28 @@ equalBlocks('.right-column .column');
 equalBlocks('.multi-column .hot-card');
 
 // map initialization
-(function () {
+(function() {
 
     if (!document.querySelector('.map')) {
         return;
     }
 
-    addEvent(window, 'load', function () {
+    addEvent(window, 'load', function() {
         eventer.emit('loadmap');
     });
-}) ();
+})();
 
 // navigation 
 
 function dropdownMenu(select) {
     var menu = document.querySelectorAll(select);
 
-    addEvent(menu, 'click', function (e) {
+    addEvent(menu, 'click', function(e) {
         var e = e || window.e;
         var target = e.target || e.srcElement;
         var check;
 
-        while(target != document) {
+        while (target != document) {
             check = target.classList.contains('wrap-list') && this.contains(target);
 
             if (check && target.classList.contains('active_link')) {
@@ -470,12 +473,12 @@ function dropdownMenu(select) {
             target = target.parentNode;
         }
 
-        if (target == document || !target ) {
+        if (target == document || !target) {
             return;
         }
 
         e.preventDefault();
-        
+
         _activeLink(target);
     });
 
@@ -490,13 +493,13 @@ dropdownMenu('.nav');
 
 function createMap(config) {
     var elemMap = document.querySelectorAll(config.selecter),
-    coord;
+        coord;
 
     if (elemMap.length <= 0) {
         return;
     }
 
-    Array.prototype.forEach.call(elemMap, function (item) {
+    Array.prototype.forEach.call(elemMap, function(item) {
         _coordStr = item.getAttribute(config.coord).split(',');
 
         _configMap(item, _coordStr);
@@ -515,7 +518,7 @@ function createMap(config) {
             panControl: false,
             mapTypeControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            center: new google.maps.LatLng(coord[0], coord[1]) 
+            center: new google.maps.LatLng(coord[0], coord[1])
         };
 
         var map = new google.maps.Map(elem, mapOptions);
@@ -538,14 +541,14 @@ function ToggeleFeed(config) {
     this.showField = config.show;
     this.disableField = config.active;
 
-    this.__cutline__ = function (elem) {
+    this.__cutline__ = function(elem) {
         var active = elem;
         var elem = active;
 
-        while(active != document) {
+        while (active != document) {
             if (elem !== undefined && elem.classList.contains(this.elemID)) {
                 break;
-            }  
+            }
 
             elem = elem.parentNode;
         }
@@ -562,16 +565,16 @@ function ToggeleFeed(config) {
 
 
 
-    this.close = function (e) {
+    this.close = function(e) {
         var data = _searcher(e);
 
         $(data.notactive).slideUp(300);
-        setTimeout(function () {
+        setTimeout(function() {
             data.active.classList.add('hidde-toggle-field');
         }, 300);
     }.bind(this);
 
-    this.open = function (e) {
+    this.open = function(e) {
         var data = _searcher(e);
 
         data.active.classList.remove('hidde-toggle-field');
@@ -580,11 +583,11 @@ function ToggeleFeed(config) {
 
     var _eventEmmiter = addEvent.bind(this);
 
-    var _searcher = function (e) {
+    var _searcher = function(e) {
         var e = e || window.e;
         var target = e.target || e.srcElement;
 
-        var block = (function () {
+        var block = (function() {
             var list = document.querySelectorAll('.' + this.disableField),
                 elem = undefined;
 
@@ -592,7 +595,7 @@ function ToggeleFeed(config) {
                 return;
             }
 
-            Array.prototype.forEach.call(list, function (item) {
+            Array.prototype.forEach.call(list, function(item) {
                 var parent = item.parentNode;
                 if (!parent.contains(target)) {
                     return;
@@ -603,7 +606,7 @@ function ToggeleFeed(config) {
 
             return elem;
         })();
-        
+
         var active = block.parentNode;
 
         return {
@@ -612,26 +615,26 @@ function ToggeleFeed(config) {
         };
     }.bind(this);
 
-    var _helper = function () {
+    var _helper = function() {
         var active = document.querySelectorAll('.' + this.elemID + ' .' + this.hiddeLayer);
 
         if (!active && active.length <= 0) {
             return false;
         }
 
-        Array.prototype.forEach.call(active, function (item) {
+        Array.prototype.forEach.call(active, function(item) {
             this.__cutline__(item);
         });
     }.bind(this);
 
-    var _findControlElem = function (id) {
+    var _findControlElem = function(id) {
         if (!id) {
             return false;
         }
 
         var id = '.' + id.toString();
 
-        if(document.querySelectorAll(id).length > 1) {
+        if (document.querySelectorAll(id).length > 1) {
             return document.querySelectorAll(id);
         }
         var item = document.querySelector(id);
@@ -659,13 +662,13 @@ var feedback = ToggeleFeed({
     show: 'js-active_field'
 });
 
-(function () {
+(function() {
     var arrElem = document.querySelectorAll('.js-accord .accord__block');
-    Array.prototype.forEach.call(arrElem, function (item) {
+    Array.prototype.forEach.call(arrElem, function(item) {
         item.style.display = 'none';
     });
 
-    addEvent(document, 'click', function (e) {
+    addEvent(document, 'click', function(e) {
         var e = e || window.e,
             target = e.target || e.srcElement,
             accord = undefined,
@@ -686,9 +689,9 @@ var feedback = ToggeleFeed({
         accord = target.parentNode;
 
         if (!accord.classList.contains('is-active')) {
-            
+
             activeAccord = $('.js-accord.is-active');
-            
+
             if (activeAccord && activeAccord.length != 0) {
                 activeAccord[0].classList.remove('is-active');
                 $(activeAccord[0]).find('.accord__block').slideUp(300);
@@ -701,7 +704,7 @@ var feedback = ToggeleFeed({
             $(accord).find('.accord__block').slideUp(300);
         }
     });
-}) ()
+})()
 
 function Rating(config) {
     this.elem = config.elem;
@@ -719,26 +722,38 @@ function Rating(config) {
         five: 'отлично'
     };
     var _eventEmmiter = addEvent.bind(this);
-    var _helpe = function (count, parent) {
+    var contain = undefined;
+
+    var _helpe = function(count, parent, event) {
         var value = undefined;
         switch (count) {
-            case 1: 
+            case 0:
                 value = helpers.one
-            case 2: 
+                break
+            case 1:
                 value = helpers.two
-            case 3: 
+                break
+            case 2:
                 value = helpers.three
-            case 4: 
+                break
+            case 3:
                 value = helpers.four
-            case 5: 
+                break
+            case 4:
                 value = helpers.five
+                break
         }
 
         if (!value) {
             return;
         }
 
-        var contain = parent.querySelector('.helpers') || document.createElement('div');
+        contain = parent.querySelector('.helpers') || document.createElement('div');
+
+        if (event.type == 'mouseleave') {
+            contain.innerHTML = '';
+            return;
+        }
 
         if (!parent.querySelector('.helpers')) {
             contain.className = 'helpers';
@@ -746,7 +761,7 @@ function Rating(config) {
         }
         contain.innerHTML = value;
     };
-    var _colorStar = function (e, event) {
+    var _colorStar = function(e, event) {
         if (!e) {
             return;
         }
@@ -766,7 +781,7 @@ function Rating(config) {
             }
         }
 
-        _helpe(countStar, e);
+        _helpe(countStar, e, event);
 
         var stars = e.querySelectorAll('.' + this.activeLine + ' span');
 
@@ -796,10 +811,10 @@ function Rating(config) {
             return;
         }
 
-       _colorStar(target, e);
+        _colorStar(target, e);
     };
 
-    var _findControlElem = function (id) {
+    var _findControlElem = function(id) {
         var id = id.toString(),
             item = undefined;
 
@@ -820,7 +835,7 @@ function Rating(config) {
         return item;
     }.bind(this);
 
-    var _searcher = function (e) {
+    var _searcher = function(e) {
         var e = e || window.e;
         var target = e.target || e.srcElement;
 
@@ -842,11 +857,15 @@ function Rating(config) {
     }.bind(this);
 
     _eventEmmiter(window, 'load', this.init.bind(this));
-    _eventEmmiter(_findControlElem('['+this.category+']'), 'mousemove', function(e) {
+    _eventEmmiter(_findControlElem('[' + this.category + ']'), 'mousemove', function(e) {
         _mouseFulling(e);
     }.bind(this));
-    _eventEmmiter(_findControlElem('['+this.category+']'), 'mouseleave', function(e) {
+    _eventEmmiter(_findControlElem('[' + this.category + ']'), 'mouseleave', function(e) {
         _mouseFulling(e);
+        if (contain) {
+            contain.innerHTML = '';
+            return;
+        }
     }.bind(this));
     _eventEmmiter(_findControlElem(this.elem), 'click', function(e) {
         var target = _searcher(e);
@@ -860,23 +879,23 @@ function Rating(config) {
 
 }
 
-Rating.prototype.init = function () {
+Rating.prototype.init = function() {
     var stars = document.querySelectorAll('[' + this.valueid + ']');
 
     if (!stars || stars.length < 1) {
         return;
     }
 
-    Array.prototype.forEach.call(stars, function (item) {
+    Array.prototype.forEach.call(stars, function(item) {
         var rating = item.getAttribute(this.valueid);
 
         item.style.width = (rating * 100) / 5 + '%';
     }.bind(this));
 };
-Rating.prototype._setting = function (target) {
+Rating.prototype._setting = function(target) {
     if (!this.valueRating || this.valueRating.length < 1) {
         return;
-    } 
+    }
 
     var active = $(target.parentNode).find('[' + this.valueid + ']'),
         category = target.parentNode.getAttribute(this.category),
@@ -885,7 +904,7 @@ Rating.prototype._setting = function (target) {
     active[0].style.width = (ratingCount * 100) / 5 + '%';
 };
 
-Rating.prototype._numeration = function (target) {
+Rating.prototype._numeration = function(target) {
     var cont = target.parentNode,
         start = cont.children,
         length = start.length,
@@ -900,8 +919,6 @@ Rating.prototype._numeration = function (target) {
     }
 
     this._setting(cont);
-
-    console.log(this.valueRating);
 };
 
 var ratings = new Rating({
@@ -918,7 +935,6 @@ $.validate({
         var forms = document.querySelectorAll('.form-field'),
             rating = ratings.valueRating;
 
-        console.log(rating);
         // place for ajax request with
 
         return false;

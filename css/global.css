@@ -3173,6 +3173,7 @@ a.btn {
 }
 
 .helpers {
+  width: 100%;
   margin-left: 10px;
   position: absolute;
   top: 0;
