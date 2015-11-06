@@ -712,13 +712,40 @@ function Rating(config) {
     this.activeLine = config.activeLine;
 
     var helpers = {
-        1: 'плохо',
-        2: 'ниже среднего',
-        3: 'нормально',
-        4: 'хорошо',
-        5: 'отлично'
+        one: 'плохо',
+        two: 'ниже среднего',
+        three: 'нормально',
+        four: 'хорошо',
+        five: 'отлично'
     };
     var _eventEmmiter = addEvent.bind(this);
+    var _helpe = function (count, parent) {
+        var value = undefined;
+        switch (count) {
+            case 1: 
+                value = helpers.one
+            case 2: 
+                value = helpers.two
+            case 3: 
+                value = helpers.three
+            case 4: 
+                value = helpers.four
+            case 5: 
+                value = helpers.five
+        }
+
+        if (!value) {
+            return;
+        }
+
+        var contain = parent.querySelector('.helpers') || document.createElement('div');
+
+        if (!parent.querySelector('.helpers')) {
+            contain.className = 'helpers';
+            parent.appendChild(contain);
+        }
+        contain.innerHTML = value;
+    };
     var _colorStar = function (e, event) {
         if (!e) {
             return;
@@ -739,6 +766,8 @@ function Rating(config) {
             }
         }
 
+        _helpe(countStar, e);
+
         var stars = e.querySelectorAll('.' + this.activeLine + ' span');
 
         Array.prototype.forEach.call(stars, function(item, i) {
@@ -749,6 +778,7 @@ function Rating(config) {
             }
         });
     }.bind(this);
+
     var _mouseFulling = function(e) {
         var e = e || window.e;
         var target = e.target || e.srcElement;
