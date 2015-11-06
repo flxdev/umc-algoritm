@@ -84,6 +84,7 @@ body {
 		float: left;
 	}
 	.contact {
+		position: relative;
 		width: 34.375%; /* 220px / 640px */
 		float: right;
 	}
@@ -180,6 +181,7 @@ body {
 	border: 0;
 	outline: 0;
 	padding: 0;
+	text-decoration: none;
 	width: 13.875em; /* 222px / 16px */
 	height: 3.125em; /* 48px / 16px */
 }
@@ -524,6 +526,7 @@ body {
 	margin-bottom: 2.25em; /* 36px / 16px */
 	@include clearfix;
 	.card-middle {
+		position: relative;
 		width: 48.7641%; /* 434px / 890px */
 		min-height: 18.1875em; /* 291px / 16px */
 		padding: 3.2584% 2.2472% 3.9326%; /* 29px / 890px, 20px / 890px, 35px / 890px */
@@ -537,7 +540,6 @@ body {
 			width: 37.1795%; /* 145px / 390px */
 		}
 		.right-column {
-			position: relative;
 			width: 57.4359%; /* 224px / 390px */
 			height: 100%;
 			padding-bottom: 3.125em;
@@ -553,7 +555,7 @@ body {
 		}
 		.btn-detailed {
 			position: absolute;
-			bottom: 0;
+			bottom: 2.1875em;
 		}
 	}
 }
@@ -972,7 +974,7 @@ blockquote {
 	z-index: 0;
 }
 .grid .card-middle dd.star-ratings {
-	margin-left: 2px;
+	margin-left: 0.025em;
 }
 .btn-feedback {
 	position: absolute;
@@ -1982,6 +1984,7 @@ li[data-content] {
 }
 .main > .card-widget.multi-column {
 	min-height: 25.5625em;
+	padding-bottom: 0;
 }
 .accordions h1 {
 	margin-bottom: 0.5625em; /* 18px / 32px */
@@ -2259,7 +2262,11 @@ a.btn {
 	font: normal 0.5833em/2 'MuseoSansMedium';
 	color: #444b5f;
 }
-
+.callback_link {
+	position: absolute;
+	top: -2em;
+	right: 0;
+}
 @keyframes cd-fade-in {
   0% {
     opacity: 0;

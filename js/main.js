@@ -458,7 +458,7 @@ equalBlocks('.multi-column .hot-card');
 function dropdownMenu(select) {
     var menu = document.querySelectorAll(select);
 
-    addEvent(menu, 'click', function(e) {
+    addEvent(menu, 'mouseover', function(e) {
         var e = e || window.e;
         var target = e.target || e.srcElement;
         var check;
@@ -466,7 +466,7 @@ function dropdownMenu(select) {
         while (target != document) {
             check = target.classList.contains('wrap-list') && this.contains(target);
 
-            if (check && target.classList.contains('active_link')) {
+            if (check) {
                 break;
             }
 
@@ -482,8 +482,40 @@ function dropdownMenu(select) {
         _activeLink(target);
     });
 
+    addEvent(menu, 'mouseout', function(e) {
+        var e = e || window.e;
+        var target = e.target || e.srcElement;
+        var check;
+
+        while (target != document) {
+            check = target.classList.contains('active_link__list') && this.contains(target);
+
+            if (check) {
+                break;
+            }
+
+            target = target.parentNode;
+        }
+
+        if (target == document || !target) {
+            return;
+        }
+
+        if (!e.relatedTarget || target.contains(e.relatedTarget)) {
+            return;
+        }
+
+        e.preventDefault();
+
+        _deactiveLink(target);
+    });
+
     function _activeLink(elem) {
-        elem.parentNode.classList.toggle('active_link__list');
+        elem.parentNode.classList.add('active_link__list');
+    }
+
+    function _deactiveLink(elem) {
+        elem.classList.remove('active_link__list');
     }
 }
 

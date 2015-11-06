@@ -108,8 +108,20 @@ body {
 	li a {
 		color: #fff;
 	}
+	.first-level {
+		& > li > a {
+			opacity: 0.7;
+			&.active_link {
+				//background: $active_color;
+				opacity: 1;
+			}
+		}
+	}
 	.second-level {
 		background: $active_color;
+		& > li > a:hover {
+			text-decoration: none;
+		}
 	}
 }
 .name_title {
@@ -137,7 +149,15 @@ body {
 	color: $border-color;
 }
 .active_link {
+	//background: $active_color;
+	opacity: 1;
+}
+.nav .first-level > li:hover {
 	background: $active_color;
+	a {
+		transition: opacity 0.2s ease;
+		opacity: 1;
+	}
 }
 .active_link__list {
 	background: $active_color;
@@ -503,3 +523,14 @@ textarea {
 		width: 20%;
 	}
 }	
+
+.link.callback_link {
+	&:hover {
+		border-color: transparent;
+	}
+	line-height: 1;
+	transition: border 0.3s ease;
+	color: $border-color;
+	text-decoration: none;
+	border-bottom: 1px dotted $border-color;
+}
