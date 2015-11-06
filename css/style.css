@@ -675,3 +675,10 @@ textarea.valid [placeholder] {
 .link.callback_link:hover {
   border-color: transparent;
 }
+
+.card-middle .left-column img,
+.personal-info_worker .left-column img,
+.personal-info_instr .left-column img,
+.manager .left-column img {
+  border: 1px solid #f7f9fd;
+}
