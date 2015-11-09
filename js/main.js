@@ -169,6 +169,7 @@ $(document).ready(function() {
 //                 tabContentWrapper.animate({
 //                     'height': slectedContentHeight
 //                 }, 200);
+//                 eventer.emit('openTab');
 //                 eventer.emit('loadmap');
 //             }
 //         });
@@ -532,6 +533,10 @@ function createMap(config) {
     }
 
     Array.prototype.forEach.call(elemMap, function(item) {
+        if (!item.hasAttribute(config.coord)) {
+            return;
+        }
+
         _coordStr = item.getAttribute(config.coord).split(',');
 
         _configMap(item, _coordStr);
@@ -590,6 +595,11 @@ function ToggeleFeed(config) {
         var endWord = temp[temp.length - 1].slice(this.length, -3).trim().concat('...');
 
         var dis = elem.querySelector('.' + this.disableField);
+
+        if (dis == null) {
+            return;
+        }
+
         dis.style.display = 'none';
         temp.splice(temp.length - 1, 1, endWord);
         showField.innerHTML = temp.join(' ');
@@ -818,7 +828,7 @@ function Rating(config) {
         var stars = e.querySelectorAll('.' + this.activeLine + ' span');
 
         Array.prototype.forEach.call(stars, function(item, i) {
-            if (i <= countStar) {
+            if (i <= countStar && event.type != 'mouseleave') {
                 item.style.color = '#f2b100';
             } else {
                 item.style.color = "#ededed";
@@ -933,7 +943,12 @@ Rating.prototype._setting = function(target) {
         category = target.parentNode.getAttribute(this.category),
         ratingCount = this.valueRating[category];
 
-    active[0].style.width = (ratingCount * 100) / 5 + '%';
+    var num = parseInt(active[0].style.width) * 5 / 100;
+    if (num == ratingCount) {
+        active[0].style.width = (ratingCount * 100) / 5 - 20 + '%';
+    } else {
+        active[0].style.width = (ratingCount * 100) / 5 + '%';
+    }
 };
 
 Rating.prototype._numeration = function(target) {
@@ -961,14 +976,70 @@ var ratings = new Rating({
     activeLine: 'star-ratings-bottom'
 });
 
-$.validate({
-    form: '.form-field',
-    onSuccess: function() {
-        var forms = document.querySelectorAll('.form-field'),
-            rating = ratings.valueRating;
+// $.validate({
+//     form: '.form-field',
+//     onSuccess: function() {
+//         var forms = document.querySelectorAll('.form-field'),
+//             rating = ratings.valueRating;
 
-        // place for ajax request with
+//         // place for ajax request with
 
-        return false;
+//         return false;
+//     }
+// });
+
+(function () {
+    if (!$('#fb-phone') || $('#fb-phone').length < 1) {
+        return;
     }
-});
+
+    $('#fb-phone').mask('+0 (000) 000-00-00');
+}) ();
+
+(function (valid) {
+
+    var fieldActive = document.querySelector('fieldset.b-category'),
+        checked = fieldActive.querySelectorAll('[checked]'),
+        tabs = document.querySelector('.tabs');
+
+    function react() {
+        $(fieldActive).slideUp(300);
+        
+        if (checked && checked.length > 0) {
+            Array.prototype.forEach.call(checked, function (item) {
+                item.checked = false;
+            });
+        }
+    }
+
+    addEvent(document, 'change', function (e) {
+        var e = e || window.event,
+            target = e.target || e.srcElement;
+
+        while (target != this) {
+            if (target.classList.contains(valid)) {
+                break;
+            }
+
+            target = target.parentNode;
+        }
+
+        if (target == document || !target.classList.contains(valid)) {
+            react();
+
+            return;
+        }
+
+        checked[0].checked = true;
+        $(fieldActive).slideDown(300);
+    });
+
+    if (tabs) {
+        eventer.on('openTab', function() {
+            react();
+        });
+    }
+
+    react();
+
+}) ('b-category');
