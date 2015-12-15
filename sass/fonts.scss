@@ -310,7 +310,11 @@ blockquote:before {
 	font: normal 1em/1.75 'MuseoSansMedium';
 }
 .columns-inline li {
-	line-height: 2.75;
+    min-height: 2.75em;
+    padding: 8px 0;
+    a {
+        line-height: 1.75;
+    }
 }
 .btn.btn-back {
 	font: normal 1em/1.75 'MuseoSansMedium';

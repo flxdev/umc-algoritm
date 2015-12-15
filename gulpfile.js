@@ -66,17 +66,17 @@ var gulp = require('gulp'),
 	        gulp.run('sass');
 	    });
 
-        gulp.watch('./js/*.js', function(event) {
-            gulp.run('js');
-        });
+        //gulp.watch('./js/*.js', function(event) {
+        //    gulp.run('js');
+        //});
 
-        gulp.watch('./img/*.svg', function(event) {
-            gulp.run('svg');
-        });
-        gulp.watch('./img/*.png', function(event) {
-            gulp.run('img');
-        });
-        gulp.watch('./img/*.img', function(event) {
-            gulp.run('img');
-        });
+        //gulp.watch('./img/*.svg', function(event) {
+        //    gulp.run('svg');
+        //});
+        //gulp.watch('./img/*.png', function(event) {
+        //    gulp.run('img');
+        //});
+        //gulp.watch('./img/*.img', function(event) {
+        //    gulp.run('img');
+        //});
 	});

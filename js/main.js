@@ -591,8 +591,25 @@ function ToggeleFeed(config) {
         }
 
         var showField = elem.querySelector('.' + this.showField);
-        var temp = active.innerHTML.split(' ', 30);
-        var endWord = temp[temp.length - 1].slice(this.length, -3).trim().concat('...');
+        var count = 0, collection = [];
+        var temp = active.innerHTML.split(' ', 30).filter(function (item, j , arr) {
+            for (var i = item.length; i > 0; i--) {
+                count++;
+
+                if (i <= 1 || count === 180) {
+
+                    if (count <= 180) {
+                        if (count == 180) {
+                            var item = item.slice(item.length - 1, item.length - i).trim().concat('...');
+                        }
+
+                        collection.push(item);
+                    }
+                }
+            }
+        });
+
+        // var endWord = temp[temp.length - 1].slice(this.length, -3);
 
         var dis = elem.querySelector('.' + this.disableField);
 
@@ -601,8 +618,27 @@ function ToggeleFeed(config) {
         }
 
         dis.style.display = 'none';
-        temp.splice(temp.length - 1, 1, endWord);
-        showField.innerHTML = temp.join(' ');
+        // temp.splice(temp.length - 1, 1, endWord.trim().concat('...'));
+        
+        if (count < 180) {
+           var end = collection[collection.length - 1].slice(this.length, -3).trim().concat('...');
+           collection.pop();
+           collection.push(end);
+        }
+
+        if (collection[collection.length - 1] === '...') {
+            var arr = collection.splice(collection.length - 2, 2),
+                id = 3;
+
+            if (arr[0].length <= 3) {
+                id = 0;
+            }
+
+            var newEnd = arr[0].slice(0, arr[0].length - id).concat(arr[1]);
+            collection.push(newEnd);
+        }
+
+        showField.innerHTML = collection.join(' ');
     };
 
 

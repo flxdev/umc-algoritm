@@ -59,16 +59,16 @@ body {
 .tabs-navigation a span {
   border-bottom: 1px dotted #ea0e02;
   -webkit-transition: border 0.2s linear;
-     -moz-transition: border 0.2s linear;
-          transition: border 0.2s linear;
+  -moz-transition: border 0.2s linear;
+  transition: border 0.2s linear;
 }
 
 .tabs-navigation .active_link {
   background: #ea0e02;
   color: #fff;
   -webkit-transition: background 0.3s 0.1s, color 0.3s;
-     -moz-transition: background 0.3s 0.1s, color 0.3s;
-          transition: background 0.3s 0.1s, color 0.3s;
+  -moz-transition: background 0.3s 0.1s, color 0.3s;
+  transition: background 0.3s 0.1s, color 0.3s;
 }
 
 .tabs-navigation .active_link span {
@@ -184,8 +184,8 @@ body {
 
 .nav .first-level > li:hover a {
   -webkit-transition: opacity 0.2s ease;
-     -moz-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
   opacity: 1;
 }
 
@@ -261,8 +261,8 @@ body {
 .feedback_slider .btn-toggle span {
   padding: 0;
   -webkit-transition: border-color 0.2s linear;
-     -moz-transition: border-color 0.2s linear;
-          transition: border-color 0.2s linear;
+  -moz-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
   border-bottom: 1px solid #ea0e02;
 }
 
@@ -289,9 +289,11 @@ body {
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
-  -webkit-transition: -webkit-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
-     -moz-transition: -moz-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
-          transition: box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
+  -webkit-transition: background 0.2s 0.1s ease, -webkit-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1);
+  transition: background 0.2s 0.1s ease, -webkit-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1);
+  -moz-transition: box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease, -moz-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1);
+  transition: box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease;
+  transition: box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), background 0.2s 0.1s ease, -webkit-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1), -moz-box-shadow 0.2s 0.1s cubic-bezier(0.4, 0, 1, 1);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -328,8 +330,7 @@ body {
   color: #365ed2;
 }
 
-.breadcrumb span,
-.breadcrumb:after {
+.breadcrumb span, .breadcrumb:after {
   color: #444b5f;
 }
 
@@ -443,8 +444,10 @@ blockquote:before {
      -moz-box-shadow: 0;
           box-shadow: 0;
   -webkit-transition: -webkit-box-shadow 0.3s;
-     -moz-transition: -moz-box-shadow 0.3s;
-          transition: box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  -moz-transition: box-shadow 0.3s, -moz-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
   outline: none;
 }
 
@@ -556,14 +559,14 @@ blockquote:before {
 .page-line li a {
   color: #ea0e02;
   -webkit-transition: background 0.2s, color 0.2s;
-     -moz-transition: background 0.2s, color 0.2s;
-          transition: background 0.2s, color 0.2s;
+  -moz-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
   text-decoration: none;
 }
 
 .btn.btn-next_border,
 .btn.btn-prev_border {
-  font: 500 1em/2.25 "MuseoSansMedium";
+  font: 500 1em/2.25 'MuseoSansMedium';
   text-decoration: none;
   text-align: center;
   height: 2.25em;
@@ -618,10 +621,7 @@ a:hover {
           box-shadow: 0 0 2px 1px rgba(54, 94, 210, 0.95) !important;
 }
 
-input.error::-webkit-input-placeholder,
-input.error::-moz-placeholder,
-input.error:-moz-placeholder,
-input.error:-ms-input-placeholder,
+input.error::-webkit-input-placeholder, input.error::-moz-placeholder, input.error:-moz-placeholder, input.error:-ms-input-placeholder,
 input.error [placeholder],
 textarea.error::-webkit-input-placeholder,
 textarea.error::-moz-placeholder,
@@ -631,10 +631,7 @@ textarea.error [placeholder] {
   color: #e41202 !important;
 }
 
-input.valid::-webkit-input-placeholder,
-input.valid::-moz-placeholder,
-input.valid:-moz-placeholder,
-input.valid:-ms-input-placeholder,
+input.valid::-webkit-input-placeholder, input.valid::-moz-placeholder, input.valid:-moz-placeholder, input.valid:-ms-input-placeholder,
 input.valid [placeholder],
 textarea.valid::-webkit-input-placeholder,
 textarea.valid::-moz-placeholder,
@@ -646,8 +643,8 @@ textarea.valid [placeholder] {
 
 .star-ratings .star-ratings-top {
   -webkit-transition: color 0.2s ease;
-     -moz-transition: color 0.2s ease;
-          transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .form-field .star-ratings {
@@ -661,8 +658,8 @@ textarea.valid [placeholder] {
 .link.callback_link {
   line-height: 1;
   -webkit-transition: border 0.3s ease;
-     -moz-transition: border 0.3s ease;
-          transition: border 0.3s ease;
+  -moz-transition: border 0.3s ease;
+  transition: border 0.3s ease;
   color: #ea0e02;
   text-decoration: none;
   border-bottom: 1px dotted #ea0e02;

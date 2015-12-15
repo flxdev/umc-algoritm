@@ -215,8 +215,10 @@ body {
       -ms-transform: rotate(0);
           transform: rotate(0);
   -webkit-transition: -webkit-transform 0.2s ease;
-     -moz-transition: -moz-transform 0.2s ease;
-          transition: transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -moz-transition: transform 0.2s ease, -moz-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease, -moz-transform 0.2s ease;
   display: inline-block;
   left: 0.5556em;
   /* 10px / 18px */
@@ -465,8 +467,7 @@ body {
   position: relative;
 }
 
-.win-present:after,
-.win-present:before {
+.win-present:after, .win-present:before {
   position: absolute;
   content: '';
   display: block;
@@ -949,8 +950,8 @@ body {
       -ms-transform: translateX(200px);
           transform: translateX(200px);
   -webkit-transition: opacity 0.3s 0.1s ease;
-     -moz-transition: opacity 0.3s 0.1s ease;
-          transition: opacity 0.3s 0.1s ease;
+  -moz-transition: opacity 0.3s 0.1s ease;
+  transition: opacity 0.3s 0.1s ease;
 }
 
 .js-active_field {
@@ -1003,8 +1004,8 @@ body {
 .slick-slider .slick-arrow {
   opacity: 0;
   -webkit-transition: opacity 0.2s ease;
-     -moz-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .slick-slider:hover .slick-arrow {
@@ -1169,8 +1170,8 @@ body {
           transform: translateX(0);
   opacity: 1;
   -webkit-transition: opacity 0.3s 0.1s ease;
-     -moz-transition: opacity 0.3s 0.1s ease;
-          transition: opacity 0.3s 0.1s ease;
+  -moz-transition: opacity 0.3s 0.1s ease;
+  transition: opacity 0.3s 0.1s ease;
   position: absolute;
   bottom: 2.33em;
   right: 1.25em;
@@ -1486,8 +1487,8 @@ blockquote:before {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-     -moz-transition: opacity 0.5s, visibility 0s 0.5s;
-          transition: opacity 0.5s, visibility 0s 0.5s;
+  -moz-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
   position: fixed;
   z-index: 8;
   width: 100%;
@@ -1512,8 +1513,8 @@ blockquote:before {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.3s;
-     -moz-transition: opacity 0.3s;
-          transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .btn-overlay-close {
@@ -1528,8 +1529,7 @@ blockquote:before {
   opacity: 0.5;
 }
 
-.btn-overlay-close:before,
-.btn-overlay-close:after {
+.btn-overlay-close:before, .btn-overlay-close:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -1904,13 +1904,13 @@ blockquote:before {
   list-style: none;
   max-width: 65.1685%;
   /* 580px / 890px */
-  -webkit-column-gap: 9.375em;
-     -moz-column-gap: 9.375em;
-          column-gap: 9.375em;
+  -webkit-column-gap: 3.8em;
+     -moz-column-gap: 3.8em;
+          column-gap: 3.8em;
   /* 150px / 16px */
-  -webkit-column-width: 13.1875em;
-     -moz-column-width: 13.1875em;
-          column-width: 13.1875em;
+  -webkit-column-width: 16.1875em;
+     -moz-column-width: 16.1875em;
+          column-width: 16.1875em;
   /* 211px / 16px */
 }
 
@@ -1923,9 +1923,10 @@ blockquote:before {
 
 .columns-inline a:before {
   width: 2.25em;
-  height: 100%;
+  height: 2.25em;
   position: absolute;
   left: 0;
+  top: -4px;
   display: inline-block;
   content: '';
 }
@@ -2294,8 +2295,8 @@ li[data-content] > h2 + .columns-inline {
 
 .feedback-card_full .btn span {
   -webkit-transition: border-color 0.2s linear;
-     -moz-transition: border-color 0.2s linear;
-          transition: border-color 0.2s linear;
+  -moz-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
 }
 
 .feedback-card_full .btn:hover {
@@ -2307,7 +2308,7 @@ li[data-content] > h2 + .columns-inline {
 }
 
 .page-line a {
-  font: normal 1em "MuseoSansMedium";
+  font: normal 1em 'MuseoSansMedium';
 }
 
 .btn-question,
@@ -2363,8 +2364,10 @@ li[data-content] > h2 + .columns-inline {
   text-align: center;
   display: inline-block;
   -webkit-transition: -webkit-transform 0.3s ease;
-     -moz-transition: -moz-transform 0.3s ease;
-          transition: transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -moz-transition: transform 0.3s ease, -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -moz-transform 0.3s ease;
 }
 
 .accord__but:hover .accord__title {
@@ -2373,10 +2376,10 @@ li[data-content] > h2 + .columns-inline {
 
 .accord__title {
   -webkit-transition: border-color 0.3s ease;
-     -moz-transition: border-color 0.3s ease;
-          transition: border-color 0.3s ease;
+  -moz-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
   display: inline;
-  font: normal 1.5em/1.16667 "MuseoSansBold";
+  font: normal 1.5em/1.16667 'MuseoSansBold';
   color: #ea0e02;
   border-bottom: 1px dotted #ea0e02;
 }
@@ -2530,14 +2533,14 @@ li[data-content] > h2 + .columns-inline {
   color: #444b5f;
   margin-top: -0.5714em;
   /* 8px / 14px */
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
 }
 
 .manager .name {
   margin: 0.333em 0 1.25em;
   /*  8px / 16px, 30px / 16px */
   color: #365ed2;
-  font: normal 1.5em/1.1667 "MuseoSansBold";
+  font: normal 1.5em/1.1667 'MuseoSansBold';
 }
 
 .manager ul {
@@ -2560,7 +2563,7 @@ li[data-content] > h2 + .columns-inline {
   /* 30px /16px */
   margin-right: 3.375em;
   /* 54px / 16px */
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .manager ul li:before {
@@ -2608,16 +2611,16 @@ li[data-content] > h2 + .columns-inline {
 }
 
 .tabl_column .title_column {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
   color: #444b5f;
 }
 
 .tabl_column .info_column {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .btn.btn-where {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
   width: 100%;
   color: #ea0e02;
 }
@@ -2806,8 +2809,8 @@ li[data-content] > h2 + .columns-inline {
   line-height: 1;
   color: #fff;
   -webkit-transition: color 0.2s ease;
-     -moz-transition: color 0.2s ease;
-          transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .slick-arrow:hover:before {
@@ -3181,7 +3184,7 @@ a.btn {
   position: absolute;
   top: 0;
   left: 100%;
-  font: normal 0.5833em/2 "MuseoSansMedium";
+  font: normal 0.5833em/2 'MuseoSansMedium';
   color: #444b5f;
 }
 

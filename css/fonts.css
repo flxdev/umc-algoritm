@@ -77,45 +77,45 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  font: normal 2em/1.4378 "MuseoSansBlack";
+  font: normal 2em/1.4378 'MuseoSansBlack';
 }
 
 h2 {
-  font: normal 1.5em/1.5 "MuseoSansBold";
+  font: normal 1.5em/1.5 'MuseoSansBold';
 }
 
 h3,
 legend {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 p, blockquote,
 label,
 .map-info li {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 blockquote:before {
-  font: normal 7.5013em/0.2333 "MuseoSansLight";
+  font: normal 7.5013em/0.2333 'MuseoSansLight';
 }
 
 .logo .name {
-  font: normal 2.25em/0.9 "MuseoSansBlack";
+  font: normal 2.25em/0.9 'MuseoSansBlack';
 }
 
 .logo .detailed {
-  font: normal 0.9375em/2.0673 "MuseoSansMedium";
+  font: normal 0.9375em/2.0673 'MuseoSansMedium';
   letter-spacing: 0.05em;
 }
 
 .name_title {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 .address,
 .time-work,
 .name-card {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .address sup,
@@ -130,20 +130,20 @@ blockquote:before {
 }
 
 .number.one {
-  font: normal 1.5em/0.7667 "MuseoSansBold";
+  font: normal 1.5em/0.7667 'MuseoSansBold';
 }
 
 .number.two {
-  font: normal 1em/2.75 "MuseoSansMedium";
+  font: normal 1em/2.75 'MuseoSansMedium';
 }
 
 .nav .first-level a {
-  font: normal 1.125em/2 "MuseoSansMedium";
+  font: normal 1.125em/2 'MuseoSansMedium';
   text-decoration: none;
 }
 
 .nav .second-level a {
-  font: normal 1em/1 "MuseoSansMedium";
+  font: normal 1em/1 'MuseoSansMedium';
   text-decoration: underline;
 }
 
@@ -156,127 +156,127 @@ blockquote:before {
 }
 
 .tabs-navigation a {
-  font: normal 1.125em/1.75 "MuseoSansMedium";
+  font: normal 1.125em/1.75 'MuseoSansMedium';
   text-decoration: none;
 }
 
 .head-board {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 .timetable tr:first-of-type {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 .timetable tr {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .place {
-  font: normal 1em/1.25 "MuseoSansRegular";
+  font: normal 1em/1.25 'MuseoSansRegular';
 }
 
 .nomination {
-  font: normal 1em/1.5 "MuseoSansBold";
+  font: normal 1em/1.5 'MuseoSansBold';
 }
 
 .article {
-  font: normal 1.125em/1.5556 "MuseoSansMedium";
+  font: normal 1.125em/1.5556 'MuseoSansMedium';
 }
 
 .category-name {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .rights-owner p,
 .developer,
 .breadcrumb {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
 }
 
 .link {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
   text-decoration: underline;
 }
 
 .link-to_video,
 .category-list li,
 .inline-list li {
-  font: normal 1.125em/1.5556 "MuseoSansMedium";
+  font: normal 1.125em/1.5556 'MuseoSansMedium';
   text-decoration: none;
 }
 
 .btn {
-  font: normal 1em/1.75 "MuseoSansBlack";
+  font: normal 1em/1.75 'MuseoSansBlack';
 }
 
 .time-item dt, .time-item dd {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .card-sub-widget a.link {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .card-middle .name {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 .card-middle .position {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
 }
 
 .work-exp .star-ratings {
-  font: normal 1.1em/1.8182 "MuseoSansMedium";
+  font: normal 1.1em/1.8182 'MuseoSansMedium';
 }
 
 .work-exp dt {
-  font: normal 0.875em/2.5714 "MuseoSansBold";
+  font: normal 0.875em/2.5714 'MuseoSansBold';
 }
 
 .work-exp dd {
-  font: normal 0.875em/2.5714 "MuseoSansMedium";
+  font: normal 0.875em/2.5714 'MuseoSansMedium';
 }
 
 .def-list dt {
-  font: normal 1.125em/1.8889 "MuseoSansBlack";
+  font: normal 1.125em/1.8889 'MuseoSansBlack';
 }
 
 .def-list dd {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .btn-toggle,
 .btn-toggle_disabled {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
 }
 
 .let {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 .time-public {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
 }
 
 .feedback-card_full .text-wrapper p {
-  font: normal 0.875em/2 "MuseoSansMedium";
+  font: normal 0.875em/2 'MuseoSansMedium';
 }
 
 .feedback-card_full .assessment .work-exp dt {
-  font: normal 0.875em/2 "MuseoSansBold";
+  font: normal 0.875em/2 'MuseoSansBold';
 }
 
 .feedback-card_full .assessment .work-exp dd {
-  font: normal 1em/1.75 "MuseoSansBold";
+  font: normal 1em/1.75 'MuseoSansBold';
 }
 
 .total_rating dt {
-  font: normal 1.125em/1.5556 "MuseoSansBlack";
+  font: normal 1.125em/1.5556 'MuseoSansBlack';
 }
 
 .total_rating dd {
-  font: normal 1.5em/1.2036 "MuseoSansBlack";
+  font: normal 1.5em/1.2036 'MuseoSansBlack';
 }
 
 .category-detailed > .grid {
@@ -290,15 +290,15 @@ blockquote:before {
 }
 
 .name-sender {
-  font: normal 1.125em/1.5556 "MuseoSansMedium";
+  font: normal 1.125em/1.5556 'MuseoSansMedium';
 }
 
 .personal-info_instr .ratings dt {
-  font: normal 1.125em/1 "MuseoSansBlack";
+  font: normal 1.125em/1 'MuseoSansBlack';
 }
 
 .personal-info_instr .ratings .star-ratings {
-  font: normal 1.4em/1 "MuseoSansBlack";
+  font: normal 1.4em/1 'MuseoSansBlack';
 }
 
 .column-list li,
@@ -306,42 +306,47 @@ blockquote:before {
 .sort-list li,
 .category,
 .value {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .columns-inline li {
-  line-height: 2.75;
+  min-height: 2.75em;
+  padding: 8px 0;
+}
+
+.columns-inline li a {
+  line-height: 1.75;
 }
 
 .btn.btn-back {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .btn-overlay-close {
-  font: normal 1em/1.25 "MuseoSansRegular";
+  font: normal 1em/1.25 'MuseoSansRegular';
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  font: normal 1em/1.3 "MuseoSansRegular";
+  font: normal 1em/1.3 'MuseoSansRegular';
 }
 
 .assessment .work-exp dt {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
 }
 
 .assessment .work-exp dd {
-  font: normal 1.5em/1.1667 "MuseoSansMedium";
+  font: normal 1.5em/1.1667 'MuseoSansMedium';
 }
 
 .important_field:after {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
   content: '*';
 }
 
 .help-block.form-error {
-  font: normal 0.875em/1 "MuseoSansRegular";
+  font: normal 0.875em/1 'MuseoSansRegular';
   color: #444b5f;
 }
 
@@ -350,6 +355,6 @@ textarea {
 }
 
 .overlay_success .text-wrapper {
-  font: normal 1em/1.75 "MuseoSansMedium";
+  font: normal 1em/1.75 'MuseoSansMedium';
   margin-bottom: 1.5em;
 }
