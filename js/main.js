@@ -234,10 +234,11 @@ function Overlay(config) {
     this.callback = config.eventOpen;
 
     this.open = function() {
+        var target = document.querySelector('body');
+        target.classList.add('no-scroll');
         this.overlay.classList.add('open');
-        _scrollActive();
 
-        _sizingOverlay();
+        this._sizingOverlay();
         this.overlay.scrollTop = 0;
 
         if (this.callback) {
@@ -246,8 +247,9 @@ function Overlay(config) {
     }.bind(this);
 
     this.close = function() {
+        var target = document.querySelector('body');
+        target.classList.remove('no-scroll');
         this.overlay.classList.remove('open');
-        _scrollActive();
     }.bind(this);
 
     var _closeBtn = config.closeBtn;
@@ -255,7 +257,7 @@ function Overlay(config) {
     var _activePlace = config.activePlace;
     var _eventEmmiter = addEvent.bind(this);
 
-    var _sizingOverlay = function() {
+    this._sizingOverlay = function() {
         var sizes = this.overlay.querySelector('.' + _activePlace).getBoundingClientRect();
 
         if (sizes.height >= window.innerHeight) {
@@ -267,27 +269,27 @@ function Overlay(config) {
         }
     }.bind(this);
 
-    var _scrollActive = function(callback) {
+    this._scrollActive = function(callback) {
         if (!this.scroll) {
             return;
         }
 
-        var overflow = document.body || document.documentElement.body,
-            target = overflow.classList;
+        var target = document.querySelector('body');
 
         if (this.statusScroll) {
-            target.add('no-scroll');
+            target.classList.add('no-scroll');
             if (callback) {
                 callback();
             }
-            return this.statusScroll = false;
+
+            this.statusScroll = false;
         } else {
-            target.remove('no-scroll')
-            return this.statusScroll = true;
+            target.classList.remove('no-scroll')
+            this.statusScroll = true;
         }
     }.bind(this);
 
-    var _findControlElem = function(id) {
+    this._findControlElem = function(id) {
         if (!id) {
             return false;
         }
@@ -310,13 +312,13 @@ function Overlay(config) {
         return;
     }
 
-    _eventEmmiter(_findControlElem(_activePlace), 'click', function(e) {
+    _eventEmmiter(this._findControlElem(_activePlace), 'click', function(e) {
         var e = e || window.event;
         e.stopPropagation();
     });
-    _eventEmmiter(_findControlElem(_closeBtn), 'click', this.close);
+    _eventEmmiter(this._findControlElem(_closeBtn), 'click', this.close);
     _eventEmmiter(this.overlay, 'click', this.close);
-    _eventEmmiter(_findControlElem(_openBtn), 'click', this.open);
+    _eventEmmiter(this._findControlElem(_openBtn), 'click', this.open);
 }
 
 // overlay
