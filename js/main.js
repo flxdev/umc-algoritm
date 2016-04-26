@@ -381,6 +381,14 @@ var overlaySuccess = new Overlay({
     activePlace: 'active-overlay-place'
 });
 
+var overlaySuccess = new Overlay({
+    elem: document.querySelector('.overlay_callback'),
+    scroll: true,
+    closeBtn: 'btn-overlay_callback',
+    openBtn: 'btn-callback',
+    activePlace: 'active-overlay-place'
+});
+
 // let blocks have equal height
 
 var equalheight = function(container) {

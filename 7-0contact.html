@@ -20,7 +20,8 @@
 					<span class="detailed">Автошкола ДОСААФ</span>
 				</a>
 			</div>
-			<div class="writing"><button class="btn btn-write_border">Записаться онлайн</button></div>
+			<div class="writing"><button class="btn btn-write_border btn-write-overlay">Записаться онлайн</button></div>
+			<div class="callback"><button class="btn btn-write_border btn-callback">Перезвоните</button></div>
 			<div class="info">
 				<div class="first-info">
 					<div class="address">Измайловский проезд, д. 11, строение 2</div>
@@ -117,7 +118,7 @@
 				</div>
 				<h1>Контакты</h1>
 				<div class="block">
-					<button class="btn btn-call">Обратный звонок</button>
+					<button class="btn btn-call">Форма обратной связи</button>
 					<div class="left-column tabl_column">
 						<div class="text-wrapper">
 							<h2>Измайловский проезд, д. 11, строение 2</h2>
@@ -196,8 +197,7 @@
 			<h1>Обратный звонок</h1>
 			<form action="" class="form-field">
 				<fieldset>
-					<legend>Заполните контактные данные</legend>
-					<div class="row"><label for="fb-name" class="name">Фамилия и имя</label><input id="fb-name" type="text" data-validation="length" data-validation-length="min2" data-validation-error-msg="Некорректно введенные данные" placeholder="Константинопольский Константин Константинович"></div>
+					<div class="row"><label for="fb-name" class="name">Фамилия и имя</label><input id="fb-name" type="text" data-validation="length" data-validation-length="min2" data-validation-error-msg="Некорректно введенные данные" placeholder="Константин Константинович"></div>
 					<div class="row">
 						<div class="left-column">
 							<label for="fb-email" class="email important_field">E-mail</label>
@@ -214,6 +214,26 @@
 					</div>
 				</fieldset>
 				<button class="btn btn-send" type="submit">Задать вопрос</button>
+			</form>
+		</div>
+	</div>
+	<div class="overlay overlay_layer overlay_callback">
+		<div class="active-overlay-place active-overlay_field">
+			<button class="btn btn-overlay-close btn-overlay_callback">Закрыть</button>
+			<h1>Перезвоните</h1>
+			<form action="" class="form-field">
+				<fieldset>
+					<div class="row">
+						<div class="left-column">
+							<label for="fb-name" class="name">Имя</label><input id="fb-name" type="text" data-validation="length" data-validation-length="min2" data-validation-error-msg="Некорректно введенные данные" placeholder="Константин Константинович">
+						</div>
+						<div class="right-column">
+							<label for="fb-phone" class="phone important_field">Телефон</label>
+							<input type="text" id="fb-phone" data-validation="custom" data-validation-error-msg="Некорректно введенные данные" data-validation-regexp="^[-0-9()+ ]+$" placeholder="+7 (000) 000-00-00">
+						</div>
+					</div>
+				</fieldset>
+				<button class="btn btn-send" type="submit">Отправить</button>
 			</form>
 		</div>
 	</div>

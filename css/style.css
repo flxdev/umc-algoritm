@@ -8,6 +8,7 @@ body {
 
 .header .time-work {
   color: #365ed2;
+  text-align: right;
 }
 
 .header:after {
