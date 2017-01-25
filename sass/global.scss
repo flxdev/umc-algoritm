@@ -64,12 +64,17 @@ body {
 	}
 	.logo {
 		width: 23.8462%; /* 310px / 1300px */
-		padding-left: 6.9231%; /* 90px / 1300px */
+		// padding-left: 6.9231%; /* 90px / 1300px */
 		.name {
 			margin-left: 3.2258%;
 		}
 		.detailed {
 			margin-left: 4.8387%;
+		}
+		.through-link {
+			padding-left: 30%;
+			position: relative;
+			z-index: 2;
 		}
 	}
 	.writing {

@@ -77,8 +77,6 @@ body {
 .header .logo {
   width: 23.8462%;
   /* 310px / 1300px */
-  padding-left: 6.9231%;
-  /* 90px / 1300px */
 }
 
 .header .logo .name {
@@ -87,6 +85,12 @@ body {
 
 .header .logo .detailed {
   margin-left: 4.8387%;
+}
+
+.header .logo .through-link {
+  padding-left: 30%;
+  position: relative;
+  z-index: 2;
 }
 
 .header .writing {
@@ -2339,7 +2343,7 @@ li[data-content] > h2 + .columns-inline {
 }
 
 .btn-call {
-  width: 15.125em;
+  width: 13.125em;
   /* 210px / 16px */
 }
 
@@ -2439,7 +2443,7 @@ li[data-content] > h2 + .columns-inline {
 }
 
 .left-column.tabl_column {
-  width: 38.625em;
+  width: 40.625em;
   /* 650px / 16px */
 }
 
@@ -2452,7 +2456,7 @@ li[data-content] > h2 + .columns-inline {
 }
 
 .right-column.tabl_column {
-  width: 15.125em;
+  width: 13.125em;
   /* 210px / 16px */
 }
 

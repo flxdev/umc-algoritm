@@ -1,3 +1,5 @@
+
+
 // helpers func for class 
 
 function addEvent(el, event, callback) {
@@ -126,6 +128,7 @@ $('.feedback_slider').slick({
 });
 
 // fancybox
+
 
 $(document).ready(function() {
     $(".gallaries").fancybox({
@@ -1044,18 +1047,30 @@ var ratings = new Rating({
 
 (function (valid) {
 
-    var fieldActive = document.querySelector('fieldset.b-category'),
-        checked = fieldActive.querySelectorAll('[checked]'),
-        tabs = document.querySelector('.tabs');
+    // var fieldActive = document.querySelector('fieldset.b-category'),
+    //     checked = fieldActive.querySelectorAll('[checked]'),
+    //     tabs = document.querySelector('.tabs');
+         var fieldActive = document.querySelectorAll('fieldset.'+valid),
+            tabs = document.querySelector('.tabs');
 
-    function react() {
-        $(fieldActive).slideUp(300);
-        
-        if (checked && checked.length > 0) {
-            Array.prototype.forEach.call(checked, function (item) {
-                item.checked = false;
-            });
+     function react() {
+        var checkeds = undefined;
+
+        if (!fieldActive||fieldActive.length < 1) {
+            return;
         }
+
+        Array.prototype.forEach.call(fieldActive, function(item) {
+            $(item).slideUp(300);
+
+            checkeds = item.querySelectorAll('[checked]');
+
+            if (checkeds && checkeds.length > 0) {
+                Array.prototype.forEach.call(checkeds, function (item) {
+                    item.checked = false;
+                });
+            }
+        });
     }
 
     addEvent(document, 'change', function (e) {
@@ -1089,3 +1104,28 @@ var ratings = new Rating({
     react();
 
 }) ('b-category');
+
+
+
+
+//vaclav 25.01.2017
+//switch-bg-index-page
+
+function switchImg() {
+    $('.js-switch').each(function() {
+        var switchItems = $(this).data('bg-switch');
+        switchItems = switchItems.split(';');
+        var count = 0 ;
+        setInterval(function() { 
+            $('.js-switch').fadeToggle(1000);
+            setTimeout(function() {
+                $('.js-switch').attr('style', 'background-image:url("' + switchItems[count] + '");');
+                if (count+1 >= switchItems.length) count = 0;
+                else count++;
+            }, 1100)
+            $('.js-switch').fadeToggle(1000);
+        } , 3100)
+
+    });
+}
+switchImg(); 

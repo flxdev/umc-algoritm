@@ -170,9 +170,9 @@ body {
 	.article {
 		color: $slide-color;
 	}
-	background: url('../img/slide-general-1.png') 0 0 no-repeat;
-	background-position: 141% 72%;
-	background-size: 37.75em 18.875em;
+	// background: url('../img/slide-general-1.png') 0 0 no-repeat;
+	// background-position: 141% 72%;
+	// background-size: 37.75em 18.875em;
 }
 .card {
 	background: #fff;
@@ -537,4 +537,53 @@ textarea {
 .personal-info_instr .left-column img,
 .manager .left-column img {
 	border: 1px solid #f7f9fd;
+}
+
+// vaclav 25.01.17
+
+.body-board .inline-sort-list li span {	color: #ea0e02; }
+.body-board .comments {	color: #515151; font-family: "MuseoSansRegular";}
+.body-board .comments span{	color: #ea0e02; }
+.body-board .list-plus { column-count: auto;    }
+.body-board .list-plus li {  width: 32%; display: inline-block; margin-bottom: 20px; font-size: 1em; padding: 0 15px; vertical-align: top;}
+.body-board .list-plus li .wrapp-img {min-height: 115px; overflow: hidden;}
+.body-board .list-plus li .wrapp-img img {max-width: 100px;}
+.body-board .list-plus li .title_plus { color: #365ed2;   font-weight: bold; margin-bottom: 10px; font-size: 1.125em;}
+.body-board .list-plus li .content_plus {font-family: "MuseoSansRegular"; font-size: 1em; overflow: hidden;}
+.body-board .list-plus li .num-list {    position: relative; float: left; top: 5px; margin-right: 5px; color: #365ed2; font-family: "MuseoSansBold";}
+.body-board .wrapp-img-full-size li {min-height: 115px; overflow: hidden;}
+.body-board .wrapp-img-full-size li img {max-width: 100%; width: 100%}
+.body-board .wrapp-img-full-size li .title_plus {color:#ea0e02; margin-top: 11px; margin-bottom: 15px}
+.body-board .title-lessons {font-weight: bold; margin-top: 30px; margin-bottom: 10px; font-size: 1.125em;}
+.sort-list-round .sort-list li:before{ width: 8px; height: 8px; border-radius: 50px; }
+.sort-list-round p {margin: 15px 0;}
+.sort-list-round li {margin: 15px 0;}
+.body-board.wrapp-card {}
+.body-board .card-work {width: 48%; overflow: hidden; padding: 25px 15px; vertical-align: top; border: 1px solid #e4e4e4; margin: 20px 0; display: inline-block;}
+.body-board .card-work:nth-child(even) { float:right;}
+.body-board .card-work:nth-child(odd) { float:left; }
+.body-board .card-work .left-block { width: 40%; display: inline-block; vertical-align: top; float:left;}
+.body-board .card-work .left-block img { width: 100%; max-height: 180px;}
+.body-board .card-work .left-block p {font-family:"MuseoSansBold"; font-size: 0.875em; padding-top: 25px; padding-top: 10px;}
+.body-board .card-work .left-block p span{font-family:"MuseoSansRegular"; font-size: 0.93em;}
+.body-board .card-work .right-block { width: 60%; display: inline-block; vertical-align: top; padding: 0 15px; float:right;}
+.body-board .card-work .right-block .name {font-family:"MuseoSansBold"; font-size: 1.125em; color: #365ed2;}
+.body-board .card-work .right-block .prof {font-family:"MuseoSansRegular"; font-size: 0.875em; color: #515151; padding-top: 15px; padding-bottom: 15px;}
+.body-board .card-work .wrapp_fio { min-height: 180px;}
+.body-board .card-work .right-block .btn_c {border: 1px solid #ea0e02; color: #ea0e02; font-size: 0.875em; background-color: rgba(0,0,0,0); font-family:"MuseoSansBold"; padding: 20px 30px; display: inline-block;  padding: 15px 25px; text-decoration: none; width: 100%;  text-align: center;}
+.header .info { width: 50%; margin-left: 3.539%; float: right; }
+.header .contact { width: 33.375%; }
+.header .time-work { text-align: left;}
+.header .first-info {   width: 58.625%; }
+
+.imgSwitch {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: -2.125em -2.5em -3.125em;
+	background-color: red;
+    z-index: -1;
+    background: url('../img/slide-general-1.png') 0 0 no-repeat;
+	background-position: 141% 72%;
+	background-size: 37.75em 18.875em;
 }
