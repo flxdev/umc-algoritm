@@ -545,7 +545,7 @@ textarea {
 .body-board .comments {	color: #515151; font-family: "MuseoSansRegular";}
 .body-board .comments span{	color: #ea0e02; }
 .body-board .list-plus { column-count: auto;    }
-.body-board .list-plus li {  width: 32%; display: inline-block; margin-bottom: 20px; font-size: 1em; padding: 0 15px; vertical-align: top;}
+.body-board .list-plus li {  width: 32% !important; display: inline-block ; margin-bottom: 20px; font-size: 1em; padding: 0 15px; vertical-align: top;}
 .body-board .list-plus li .wrapp-img {min-height: 115px; overflow: hidden;}
 .body-board .list-plus li .wrapp-img img {max-width: 100px;}
 .body-board .list-plus li .title_plus { color: #365ed2;   font-weight: bold; margin-bottom: 10px; font-size: 1.125em;}
@@ -586,4 +586,15 @@ textarea {
     background: url('../img/slide-general-1.png') 0 0 no-repeat;
 	background-position: 141% 72%;
 	background-size: 37.75em 18.875em;
+}
+
+.category-detailed .text-wrapper h2 span {
+  color: #515151;
+  padding: 0 9px;
+  font-size: 0.7em;
+  font-family: "MuseoSansRegular";
+}
+
+span.grey {
+	color: #515151 !important;
 }

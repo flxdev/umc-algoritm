@@ -689,7 +689,7 @@ textarea.valid [placeholder] {
 }
 
 .body-board .list-plus li {
-  width: 32%;
+  width: 32% !important;
   display: inline-block;
   margin-bottom: 20px;
   font-size: 1em;
@@ -746,7 +746,6 @@ textarea.valid [placeholder] {
 
 .body-board .title-lessons {
   font-weight: bold;
-  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 1.125em;
 }
@@ -772,7 +771,7 @@ textarea.valid [placeholder] {
   overflow: hidden;
   padding: 25px 15px;
   vertical-align: top;
-  border: 1px solid #e4e4e4;
+  border: 2px solid #e4e4e4;
   margin: 20px 0;
   display: inline-block;
 }
@@ -847,6 +846,11 @@ textarea.valid [placeholder] {
   text-decoration: none;
   width: 100%;
   text-align: center;
+  outline: none;
+}
+.body-board .card-work .right-block .btn_c:hover {
+  background-color: #ea0e02;
+  color: #fff;
 }
 
 .header .info {
@@ -880,3 +884,17 @@ textarea.valid [placeholder] {
     -o-background-size: 37.75em 18.875em;
        background-size: 37.75em 18.875em;
 }
+
+.category-detailed .text-wrapper h2 span {
+  color: #515151;
+  padding: 0 9px;
+  font-size: 0.7em;
+  font-family: "MuseoSansRegular";
+}
+
+span.grey {
+  color: #515151 !important;
+}
+
+
+.body-board .card-work 
