@@ -896,42 +896,26 @@ span.grey {
   min-height: 10em;
 }
 
-.wrapp_popup {
-  position: fixed;
-  z-index: 110;
-  width: 100%;
-  min-height: 100vh;
-  background-color: rgba(54, 94, 210, 0.7);
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
 
-.wrapp_popup .wrapp_popup_content {
-  max-width: 35%;
-  min-width: 320px;
-  width: 100%;
-  margin: 200px auto;
-  background-color: #fff;
-  padding: 30px 60px;
+/*08.02.2017 vaclav last*/
+.wrapp_popup_content {
   text-align: center;
-  position: relative;
 }
 
-.wrapp_popup .wrapp_popup_content .title {
+.wrapp_popup_content .title {
   font: normal 2em/1.4378 'MuseoSansBlack';
   padding-bottom: 20px;
 }
 
-.wrapp_popup .wrapp_popup_content p span {
+.wrapp_popup_content p span {
   font-weight: bold;
 }
 
-.wrapp_popup .wrapp_popup_content .btn_c {
+.wrapp_popup_content .btn_c {
   border: 1px solid #ea0e02;
-  color: #ea0e02;
+  color: #fff;
   font-size: 0.875em;
-  background-color: transparent;
+  background-color:  #ea0e02;
   font-family: "MuseoSansBold";
   display: inline-block;
   padding: 15px 25px;
@@ -939,16 +923,26 @@ span.grey {
   width: 200px;
   text-align: center;
   outline: none;
-  margin: 40px 0;
+  margin: 40px 0 10px;
 }
 
-.wrapp_popup .wrapp_popup_content .btn_c:hover {
-  background-color: #ea0e02;
-  color: #fff;
+.wrapp_popup_content .btn_c:hover {
+  background-color: transparent;
+  color: #ea0e02;
 }
 
-.wrapp_popup .wrapp_popup_content .close {
+.btn-contact {
+  top: 2.375em;
   position: absolute;
-  top: -35px;
-  right: 0;
+  right: 2.5em;
+  width: 11em;
+  vertical-align: middle;
+  border: 1px solid #ededed;
+  color: #000;
+  width: 13.125em;
+}
+.btn-contact:hover {
+  border: 1px solid #ea0e02;
+  color: #fff;
+  background-color: #ea0e02;
 }

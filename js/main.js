@@ -391,6 +391,15 @@ var overlaySuccess = new Overlay({
     openBtn: 'btn-callback',
     activePlace: 'active-overlay-place'
 });
+//new_v
+var overlayContact = new Overlay({
+    elem: document.querySelector('.overlay_contact'),
+    scroll: true,
+    closeBtn: 'btn-overlay_contact',
+    openBtn: 'btn-contact',
+    activePlace: 'active-overlay-place'
+});
+// new_v
 
 // let blocks have equal height
 
