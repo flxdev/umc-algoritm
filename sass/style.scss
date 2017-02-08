@@ -598,3 +598,59 @@ textarea {
 span.grey {
 	color: #515151 !important;
 }
+
+.body-board .inline-sort-list { min-height: 10em; }
+
+.wrapp_popup {
+	position: fixed;
+	z-index: 110;
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(54, 94, 210, .7);
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	.wrapp_popup_content {
+		max-width: 35%;
+		min-width: 320px;
+		width: 100%;
+		margin: 200px auto;
+		background-color: #fff;
+		padding: 30px 60px;
+		text-align: center;
+		position: relative;
+		.title {
+			font: normal 2em/1.4378 'MuseoSansBlack';
+			padding-bottom: 20px;
+		}
+		p {
+			span {
+				font-weight: bold;
+			}
+		}
+		.btn_c  {
+			border: 1px solid #ea0e02;
+			color: #ea0e02;
+			font-size: 0.875em;
+			background-color: transparent;
+			font-family: "MuseoSansBold";
+			display: inline-block;
+			padding: 15px 25px;
+			text-decoration: none;
+			width: 200px;
+			text-align: center;
+			outline: none;
+			margin: 40px 0;
+			&:hover {
+				background-color: #ea0e02;
+				color: #fff;
+			}
+		}
+		.close {
+			position: absolute;
+			top: -35px;
+			right: 0;
+		}
+
+	}
+}

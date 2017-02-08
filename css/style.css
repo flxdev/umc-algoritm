@@ -746,6 +746,7 @@ textarea.valid [placeholder] {
 
 .body-board .title-lessons {
   font-weight: bold;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 1.125em;
 }
@@ -771,7 +772,7 @@ textarea.valid [placeholder] {
   overflow: hidden;
   padding: 25px 15px;
   vertical-align: top;
-  border: 2px solid #e4e4e4;
+  border: 1px solid #e4e4e4;
   margin: 20px 0;
   display: inline-block;
 }
@@ -846,11 +847,6 @@ textarea.valid [placeholder] {
   text-decoration: none;
   width: 100%;
   text-align: center;
-  outline: none;
-}
-.body-board .card-work .right-block .btn_c:hover {
-  background-color: #ea0e02;
-  color: #fff;
 }
 
 .header .info {
@@ -896,5 +892,63 @@ span.grey {
   color: #515151 !important;
 }
 
+.body-board .inline-sort-list {
+  min-height: 10em;
+}
 
-.body-board .card-work 
+.wrapp_popup {
+  position: fixed;
+  z-index: 110;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(54, 94, 210, 0.7);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.wrapp_popup .wrapp_popup_content {
+  max-width: 35%;
+  min-width: 320px;
+  width: 100%;
+  margin: 200px auto;
+  background-color: #fff;
+  padding: 30px 60px;
+  text-align: center;
+  position: relative;
+}
+
+.wrapp_popup .wrapp_popup_content .title {
+  font: normal 2em/1.4378 'MuseoSansBlack';
+  padding-bottom: 20px;
+}
+
+.wrapp_popup .wrapp_popup_content p span {
+  font-weight: bold;
+}
+
+.wrapp_popup .wrapp_popup_content .btn_c {
+  border: 1px solid #ea0e02;
+  color: #ea0e02;
+  font-size: 0.875em;
+  background-color: transparent;
+  font-family: "MuseoSansBold";
+  display: inline-block;
+  padding: 15px 25px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  outline: none;
+  margin: 40px 0;
+}
+
+.wrapp_popup .wrapp_popup_content .btn_c:hover {
+  background-color: #ea0e02;
+  color: #fff;
+}
+
+.wrapp_popup .wrapp_popup_content .close {
+  position: absolute;
+  top: -35px;
+  right: 0;
+}
