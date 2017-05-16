@@ -411,6 +411,7 @@ body {
 	}
 	h1 {
 		margin-bottom: 3.4808%; /* 30px / 890px */
+		max-width: 70%;
 	}
 }
 .service {
@@ -522,6 +523,7 @@ body {
 	height: 100%;
 }
 .breadcrumbs {
+	max-width: 70%;
 	@include clearfix;
 	margin-top: 0.3125em; /* 5px / 16px */
     margin-bottom: 2.625em; /* 42px / 16px */
@@ -2310,4 +2312,140 @@ a.btn {
     -o-transform: scale(0.8);
     transform: scale(0.8);
   }
+}
+
+// ------table price ----//
+
+.tab-price {
+	margin-bottom: 1.4375em; // 23px
+	.tabs-navigation li {
+		margin-right: 0em;
+		a {
+
+		}
+	}
+}
+.table-price {
+	width: 100%;
+	table-layout: fixed;
+	&.price_1 {
+		tbody {
+			tr {
+				&:nth-child(2n) {
+					background-color: #f8f8f8;
+				}
+				td {
+					&:nth-child(2) {
+						padding-left: 53px;
+					}
+				}
+			}
+		}
+		thead {
+			tr {
+				th {
+					&:first-child {
+						width: 33%
+					}
+					&:nth-child(2) {
+						width: 27.6%;
+					}
+				}
+			}
+		}
+	}
+	thead {
+		background-color: #d7dff6;
+		tr {
+			th {
+				text-align: left;
+				padding: 1.3125em; // 21px
+				font-family: "MuseoSansBlack";
+				letter-spacing: 1.1px;
+				
+			}
+		}
+	}
+	tbody {
+		border-bottom: 1px solid #ededed;
+		position: relative;
+		tr.head {
+			td {
+				font-family: "MuseoSansBlack";
+				font-size: 1em;
+				text-transform: uppercase;
+				padding-top: 29px;
+				padding-bottom: 15px;
+			}
+		}
+		tr {
+			td {
+				padding: 18px 10px 18px 23px;
+				vertical-align: top;
+				font-family: "MuseoSansMedium";
+				a {
+					font-family: "MuseoSansBold";
+					color: #000000;
+				}
+				
+				&:nth-child(3) {
+					padding-left: 20px;
+					padding-top: 16px;
+				}
+				p {
+					line-height: 1.45;
+					&.sale {
+						color: #e41202;
+						position: relative;
+						&::after {
+							content: "";
+							width: 1em;
+							height: 1em;
+							background-image: url(../img/sale.png);
+							background-size: cover;
+							background-repeat: no-repeat;
+							position: absolute;
+							left: -1.5em;
+							top: 0.220em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.conditions {
+	margin-bottom: 3.125em; //50px
+	p {
+		font-size: 1em;
+		color: #747474;
+		font-family: 'MuseoSansMedium';
+		line-height: 1.45;
+	}
+}
+.writing_now {
+	@include clearfix;
+	padding: 17px 0;
+	.col_40 {
+		width: 40%;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: right;
+		margin-right: -4px;
+		padding: 0 26px;
+		text-align: left
+	}
+	.col_60 {
+		width: 56.5%;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: right;
+		margin-right: -4px;
+		padding: 0 15px;
+	}
+	.btn {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
 }

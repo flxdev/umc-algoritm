@@ -584,6 +584,7 @@ body {
 .card-widget h1 {
   margin-bottom: 3.4808%;
   /* 30px / 890px */
+  max-width: 70%;
 }
 
 .service .preview {
@@ -742,6 +743,7 @@ body {
 }
 
 .breadcrumbs {
+  max-width: 70%;
   margin-top: 0.3125em;
   /* 5px / 16px */
   margin-bottom: 2.625em;
@@ -3277,4 +3279,142 @@ a.btn {
     -ms-transform: scale(0.8);
     transform: scale(0.8);
   }
+}
+
+.tab-price {
+  margin-bottom: 1.4375em;
+}
+
+.tab-price .tabs-navigation li {
+  margin-right: 0em;
+}
+
+.table-price {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-price.price_1 tbody tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.table-price.price_1 tbody tr td:nth-child(2) {
+  padding-left: 53px;
+}
+
+.table-price.price_1 thead tr th:first-child {
+  width: 33%;
+}
+
+.table-price.price_1 thead tr th:nth-child(2) {
+  width: 27.6%;
+}
+
+.table-price thead {
+  background-color: #d7dff6;
+}
+
+.table-price thead tr th {
+  text-align: left;
+  padding: 1.3125em;
+  font-family: "MuseoSansBlack";
+  letter-spacing: 1.1px;
+}
+
+.table-price tbody {
+  border-bottom: 1px solid #ededed;
+  position: relative;
+}
+
+.table-price tbody tr.head td {
+  font-family: "MuseoSansBlack";
+  font-size: 1em;
+  text-transform: uppercase;
+  padding-top: 29px;
+  padding-bottom: 15px;
+}
+
+.table-price tbody tr td {
+  padding: 18px 10px 18px 23px;
+  vertical-align: top;
+  font-family: "MuseoSansMedium";
+}
+
+.table-price tbody tr td a {
+  font-family: "MuseoSansBold";
+  color: #000000;
+}
+
+.table-price tbody tr td:nth-child(3) {
+  padding-left: 20px;
+  padding-top: 16px;
+}
+
+.table-price tbody tr td p {
+  line-height: 1.45;
+}
+
+.table-price tbody tr td p.sale {
+  color: #e41202;
+  position: relative;
+}
+
+.table-price tbody tr td p.sale::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-image: url(../img/sale.png);
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -1.5em;
+  top: 0.220em;
+}
+
+.conditions {
+  margin-bottom: 3.125em;
+}
+
+.conditions p {
+  font-size: 1em;
+  color: #747474;
+  font-family: 'MuseoSansMedium';
+  line-height: 1.45;
+}
+
+.writing_now {
+  padding: 17px 0;
+}
+
+.writing_now:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.writing_now .col_40 {
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  margin-right: -4px;
+  padding: 0 26px;
+  text-align: left;
+}
+
+.writing_now .col_60 {
+  width: 56.5%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  margin-right: -4px;
+  padding: 0 15px;
+}
+
+.writing_now .btn {
+  position: relative;
+  top: auto;
+  right: auto;
 }
