@@ -12,6 +12,106 @@
 	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
+	<!--@TODO #1 specials line top-->
+	<style>
+		.header-specials{
+			width: 100%;
+			background-color: #ea0e02;
+			color: #fff;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			text-align: center;
+			height: 32px;
+			position: relative;
+			z-index: 2;
+			font-size: 14px;
+		}
+		.header-specials__text-block{
+			width: 980px;
+			text-align: center;
+			margin: auto;
+			position: absolute;
+			top: 4px;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			pointer-events: none;
+			transform: translatey(-30px);
+			transition: transform .2s ease, opacity .2s ease;
+		}
+		.header-specials__text-block.active{
+			opacity: 1;
+			pointer-events: inherit;
+			transform: translatey(0);
+		}
+		.header-specials__text-block p {
+			display: inline-block;
+			max-width: 900px;
+			padding-right: 20px;
+		}
+		.header-specials__link{
+			cursor: pointer;
+			position: relative;
+			padding-right: 5px;
+			border-left: 1px solid rgba(255,255,255,.2);
+			padding-left: 20px;
+			display: inline-block;
+		}
+		.header-specials__link:after{
+			content: '';
+			position: absolute;
+			display: block;
+			width: 8px;
+			height: 8px;
+			right: 0;
+			top: 7px;
+			border-right: 1px solid #fff;
+			border-top: 1px solid #fff;
+			border-left: 1px solid transparent;
+			border-bottom: 1px solid transparent;
+			transform: rotate(45deg);
+			transition: transform .2s ease;
+		}
+		.header-specials__link:hover:after{
+			transform: translatex(5px) rotate(45deg);
+		}
+		.header{
+			top: 32px
+		}
+	</style>
+	<div data-timer="3" class="header-specials">
+		<div class="header-specials__text-block active">
+			<p>Допризывники обучаются на категорию "С" БЕСПЛАТНО!</p>
+			<div class="header-specials__link">
+				<p>Подробнее</p>
+			</div>
+		</div>
+		<div class="header-specials__text-block">
+			<p>Зарабатывай вместе с ДОСААФ!</p>
+			<div class="header-specials__link">
+				<p>Подробнее</p>
+			</div>
+		</div>
+		<div class="header-specials__text-block">
+			<p>Запишись на бесплатный урок по вождению.</p>
+			<div class="header-specials__link">
+				<p>Подробнее</p>
+			</div>
+		</div>
+		<div class="header-specials__text-block">
+			<p>Первый платеж всего 30% от стоимости обучения.</p>
+			<div class="header-specials__link">
+				<p>Подробнее</p>
+			</div>
+		</div>
+		<div class="header-specials__text-block">
+			<p>Открыты утренние, дневные, вечерние и ночные группы практического вождения</p>
+		</div>
+	</div>
+	<script>
+		// In main.js
+	</script>
+	<!--END new block-->
 	<div class="header">
 		<div class="content">
 		 	<a href=""></a>

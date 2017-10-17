@@ -1157,3 +1157,17 @@ function priceTabs() {
     });
 };
 priceTabs();
+
+//@TODO for #1
+if($('.header-specials').length){
+	var textBlocks = $('.header-specials__text-block')
+	var numb = 1
+	function nextSpecial (numb) {
+		textBlocks.siblings().removeClass('active')
+		textBlocks.eq(numb).addClass('active')
+	}
+	setInterval(function(){
+		nextSpecial(numb)
+		numb+1 >= textBlocks.length ? numb=0 : numb++
+	}, $('.header-specials').data('timer')*1000)
+}
