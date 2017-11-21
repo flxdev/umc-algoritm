@@ -1160,14 +1160,26 @@ priceTabs();
 
 //@TODO for #1
 if($('.header-specials').length){
-	var textBlocks = $('.header-specials__text-block')
-	var numb = 1
+  var headerSpecials = {
+    specials: $('.header-specials'),
+	  textBlocks: $('.header-specials__text-block'),
+    numb: 1,
+    hover: false,
+    timer: $('.header-specials').data('timer')*1000
+  }
 	function nextSpecial (numb) {
-		textBlocks.siblings().removeClass('active')
-		textBlocks.eq(numb).addClass('active')
+		headerSpecials.textBlocks.siblings().removeClass('active')
+		headerSpecials.textBlocks.eq(numb).addClass('active')
 	}
+	headerSpecials.specials.hover(function () {
+    headerSpecials.hover = true
+	}, function () {
+    headerSpecials.hover = false
+	})
 	setInterval(function(){
-		nextSpecial(numb)
-		numb+1 >= textBlocks.length ? numb=0 : numb++
-	}, $('.header-specials').data('timer')*1000)
+	    if(!headerSpecials.hover){
+		    nextSpecial(headerSpecials.numb)
+		    headerSpecials.numb+1 >= headerSpecials.textBlocks.length ? headerSpecials.numb=0 : headerSpecials.numb++
+      }
+	}, headerSpecials.timer)
 }
