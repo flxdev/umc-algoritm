@@ -95,7 +95,7 @@ eventer.on('loadmap', function() {
 $('.card-slider').slick({
     dots: true,
     fade: false,
-    infinite: true,
+    // infinite: true,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
