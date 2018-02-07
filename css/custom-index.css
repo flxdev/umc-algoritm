@@ -76,9 +76,17 @@
 }*/
 .multipromo-block .card-third .preview{
 	position: relative;
+	overflow: hidden;
+	
 }
 .multipromo-block .through-link:hover .name_title{
 	color: #000000;
+}
+.multipromo-block .through-link img{
+	transition: transform .25s;
+}
+.multipromo-block .through-link:hover img{
+	transform: scale(1.1);
 }
 .multipromo-block .card-third .preview .category-name{
 	position: absolute;
@@ -87,6 +95,7 @@
 	background-color: #365ed2;
 	color: #fff;
 	padding: 1px 12px;
+	z-index: 1;
 }
 .multipromo-block .card-third .public-info,.multipromo-block .card-third  .name_title{
 	padding-left: 22px;
