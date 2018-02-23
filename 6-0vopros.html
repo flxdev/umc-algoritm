@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/response.css">
 </head>
 <body>
 	<div class="header">
@@ -216,6 +217,12 @@
 						<textarea name="" data-validation="length" data-validation-error-msg="Некорректно введенные данные" data-validation-length="min20" placeholder="Напишите ваш вопрос" id="fb-message" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" required></textarea>
 					</div>
 				</fieldset>
+				<div class="agree-block">
+					<input type="checkbox" name="agree-btn" id="agree-1" data-validation="required" data-validation-error-msg="Ваше согласие обязательно">
+					<label for="agree-1">Даю согласие на обработку моих 
+						<a href="https://www.umc-algoritm.ru/privacy/" target="_blank">персональных&nbsp;данных</a>
+					</label>
+				</div>
 				<button class="btn btn-send" type="submit">Задать вопрос</button>
 			</form>
 		</div>

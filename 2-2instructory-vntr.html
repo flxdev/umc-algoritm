@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/response.css">
 </head>
 <body>
 	<div class="header">
@@ -400,7 +401,7 @@
 					</div>
 					<div class="row">
 						<label for="fb-message" class="message important_field">Сообщение</label>
-						<textarea name="" placeholder="Напишите ваш отзыв об инструкторе" id="fb-message" data-validation="length" data-validation-error-msg="Некорректно введенные данные" data-validation-length="min20" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" required></textarea>
+						<textarea name="" placeholder="Напишите ваш отзыв об инструкторе" id="fb-message" data-validation="length" data-validation-error-msg="Некорректно введенные данные" data-validation-length="min20" style="margin-top: 0px; margin-bottom: 0px; height: 110px;"></textarea>
 					</div>
 				</fieldset>
 				<div class="assessment">
@@ -471,6 +472,12 @@
 							</div>
 						</dd>
 					</dl>
+				</div>
+				<div class="agree-block">
+					<input type="checkbox" name="agree-btn" id="agree-1" data-validation="required" data-validation-error-msg="Ваше согласие обязательно">
+					<label for="agree-1">Даю согласие на обработку моих 
+						<a href="https://www.umc-algoritm.ru/privacy/" target="_blank">персональных&nbsp;данных</a>
+					</label>
 				</div>
 				<button class="btn btn-send" type="submit">Отправить отзыв</button>
 			</form>

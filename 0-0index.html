@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/media.css">
 	<link rel="stylesheet" href="css/custom-index.css">
+	<link rel="stylesheet" href="css/response.css">
 </head>
 <body>
 	<!--@TODO #1 specials line top-->
@@ -182,6 +183,73 @@
 					<li><a href="">Контакты</a></li>
 				</ul>
 			</div>
+			<!-- структура мобильного меню аналогична обычному за исключением 
+				того, что "wrap-list" присвается 'li', а не вложенной ссылке 'li a'.
+				Стили для мобильного меню находятся в файле response.css -->
+
+			<div class="mob-menu-btn js-mob-menu">
+				<span class="mob-menu-btn__item"></span>
+				<span class="mob-menu-btn__item"></span>
+				<span class="mob-menu-btn__item"></span>
+			</div>
+
+			<div class="mob-menu">
+				<div class="mob-wrap-close js-mob-menu"></div>
+				<div class="mob-menu-inner">
+					<div class="mob-menu-close js-mob-menu">
+						<span class="mob-menu-close__item"></span>
+						<span class="mob-menu-close__item"></span>
+					</div>
+					<ul class="first-level">
+						<li><a href="">Главная</a></li>
+						<li class="wrap-list">
+							<a href="">Об автошколе</a>
+							<ul class="second-level">
+								<li><a href="">История</a></li>
+								<li><a href="">Администрация</a></li>
+								<li><a href="">Лицензия</a></li>
+								<li><a href="">Документация</a></li>
+								<li><a href="">Фотогалерея</a></li>
+								<li><a href="">Видео</a></li>
+								<li><a href="">Вакансии</a></li>
+								<li><a href="">Теннисный корт</a></li>
+								<li><a href="">Аренда помещений</a></li>
+							</ul>
+						</li>
+						<li class="wrap-list"><a href="" >Обучение</a>
+							<ul class="second-level">
+								<li><a href="">История</a></li>
+								<li><a href="">Администрация</a></li>
+								<li><a href="">Лицензия</a></li>
+								<li><a href="">Документация</a></li>
+								<li><a href="">Фотогалерея</a></li>
+								<li><a href="">Видео</a></li>
+								<li><a href="">Вакансии</a></li>
+								<li><a href="">Теннисный корт</a></li>
+								<li><a href="">Аренда помещений</a></li>
+							</ul>
+						</li>
+						<li class="wrap-list"><a href="">Категории</a>
+							<ul class="second-level">
+								<li><a href="">История</a></li>
+								<li><a href="">Администрация</a></li>
+								<li><a href="">Лицензия</a></li>
+								<li><a href="">Документация</a></li>
+								<li><a href="">Фотогалерея</a></li>
+								<li><a href="">Видео</a></li>
+								<li><a href="">Вакансии</a></li>
+								<li><a href="">Теннисный корт</a></li>
+								<li><a href="">Аренда помещений</a></li>
+							</ul>
+						</li>
+						<li><a href="">Новости</a></li>
+						<li><a href="">Отзывы</a></li>
+						<li><a href="">Вопрос/ответ</a></li>
+						<li><a href="">Контакты</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- конец мобильного меню -->
 		</div>
 	</div><!-- /.header -->
 	<div class="wrapper">
