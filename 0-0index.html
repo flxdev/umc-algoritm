@@ -187,11 +187,29 @@
 				того, что "wrap-list" присвается 'li', а не вложенной ссылке 'li a'.
 				Стили для мобильного меню находятся в файле response.css -->
 
-			<div class="mob-menu-btn js-mob-menu">
-				<span class="mob-menu-btn__item"></span>
-				<span class="mob-menu-btn__item"></span>
-				<span class="mob-menu-btn__item"></span>
+			<div class="mob-menu-btn-wrap">
+				<div class="logotype">
+					<a href="/" class="logotype-link">
+						<div class="img-bloc">
+							<img src="img/logo.png" alt="logo">
+						</div>
+						<div class="desc-block">
+							<div class="name">Алгоритм</div>
+							<div class="detailed">Автошкола ДОСААФ</div>
+						</div>
+						
+					</a>
+				</div>
+				<div class="writing">
+					<button class="btn btn-write_border">Записаться онлайн</button>
+				</div>
+				<div class="mob-menu-btn js-mob-menu">
+					<span class="mob-menu-btn__item"></span>
+					<span class="mob-menu-btn__item"></span>
+					<span class="mob-menu-btn__item"></span>
+				</div>
 			</div>
+			
 
 			<div class="mob-menu">
 				<div class="mob-wrap-close js-mob-menu"></div>
@@ -199,6 +217,25 @@
 					<div class="mob-menu-close js-mob-menu">
 						<span class="mob-menu-close__item"></span>
 						<span class="mob-menu-close__item"></span>
+					</div>
+					<div class="more-info">
+						<div class="more-info-inner">
+							<div class="address">Измайловский проезд, д. 11, стр. 2</div>
+							<div class="time-work">Время работы: 9<sup>00</sup>–19<sup>00</sup> (Пн.- Пт.) 9<sup>00</sup>–18<sup>00</sup> (Сб.-Вс.)
+							</div>
+						</div>
+
+						<div class="more-info-inner">
+							<div class="number one">
+								<a href="tel:84991647116" class="through-link">8 (499) 164-7116</a>
+							</div>
+							<div class="number two">
+								<a href="tel:84991663048" class="through-link">8 (499) 166-3048</a>
+							</div>
+						</div>						
+					</div>
+					<div class="writing">
+						<button class="btn btn-write_border">Записаться онлайн</button>
 					</div>
 					<ul class="first-level">
 						<li><a href="">Главная</a></li>
@@ -246,7 +283,7 @@
 						<li><a href="">Отзывы</a></li>
 						<li><a href="">Вопрос/ответ</a></li>
 						<li><a href="">Контакты</a></li>
-					</ul>
+					</ul>	
 				</div>
 			</div>
 			<!-- конец мобильного меню -->

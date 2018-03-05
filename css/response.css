@@ -1,3 +1,13 @@
+.footer .content, .header .content {
+    max-width: 81.25em ;
+    width: 100%;
+    margin: 0 auto;
+}
+.footer, .header {
+    width: 100%;
+    min-width: 100%; 
+}
+
 /*mobile menu*/
 
 	.mob-menu{
@@ -7,7 +17,7 @@
 		background-color: rgba(38,38,38,.85);
 		width: 100%;
 		height: 100%;
-		z-index: 30;
+		z-index: 200;
 		text-align: right;
 		visibility: hidden;
 		opacity: 0;
@@ -29,7 +39,7 @@
 		height: 100%;
 		width: 100%;
 		max-width: 350px;
-		padding: 60px 30px 10px 30px;
+		padding: 70px 30px 30px 30px;
 		position: relative;
 		overflow-y: auto;
 		-webkit-transform: translateX(110%);
@@ -99,15 +109,66 @@
 		-ms-transform: rotate(180deg);
 		transform: rotate(180deg);
 	}
+	.mob-menu-btn-wrap{
+		display: none;
+		position: absolute;
+		top: 35px;
+		right: 25px;
+		background: #ffffff;
+	}
+	.mob-menu-btn-wrap .logotype{
+		display: none;
+	}
+	.mob-menu-btn-wrap .writing{ 
+		display: none;
+	}
+	.mob-menu-btn-wrap .logotype .logotype-link{
+		display: flex;
+		width: 210px;
+		justify-content: space-between;
+		align-items: center;
+		color: #000000;
+	}
+	.logotype .img-bloc{
+		width: 50px;
+		height: 50px;
+	}
+	.logotype .img-bloc img{
+		width: 100%;
+		max-width: 100%;
+	}
+	.logotype .desc-block .name{
+		font: normal 2.25em/0.9 'MuseoSansBlack';
+	}
+	.logotype .desc-block .detailed{
+		font: normal 0.9375em/2.0673 'MuseoSansMedium';
+		letter-spacing: 0.05em;
+	}
+	.mob-menu-btn-wrap.fixed{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+		padding: 10px 25px;
+		display: flex;
+		align-items: center;
+		box-shadow: 0 10px 20px 0 rgba(54, 94, 210, .46);
+	}
+	.mob-menu-btn-wrap.fixed .logotype{
+		display: block;
+	}
+	.mob-menu-btn-wrap.fixed .writing{
+		display: block;
+	}
 	.mob-menu-btn{
 		display: block;
 		background-color: #ffffff;
 		width: 40px;
 		padding: 5px;
 		cursor: pointer;
-		position: absolute;
-		top: 30px;
-		right: 25px;	
+		margin-right: 0;
+		margin-left: auto;
 	}
 	.mob-menu-btn__item{
 		display: block;
@@ -164,7 +225,17 @@
 		transform: none;
 		transition: transform .4s .2s;
 	}
-
+	.mob-menu .writing{
+		padding-bottom: 15px;
+		text-align: left !important;
+	}
+	.more-info{
+		padding-left: 30px;
+		padding-right: 10px;
+	}
+	.more-info-inner{
+		padding-bottom: 15px;
+	}
 	html.menu-active{
 		overflow: hidden;
 	}
@@ -217,23 +288,23 @@
     width: 15px;
     height: 15px;
     display: block;
+    border-radius: 3px;
 }
 .active-overlay_field input[type="checkbox"]:checked + label:after {
     display: block;
 }
 
 .active-overlay_field input[type="checkbox"] + label:after {
-    background-color: #162552;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: none;
+	content: '\2714';
+	display: none;
+	width: 100%;
+	width: 15px;
+	height: 15px;
+	top: 0;
+	font-size: 18px;
+	line-height: 1;
 }
-.overlay_layer input[type="checkbox"] + label:after {
-    margin-left: 3px;
-    margin-top: 3px;
-    width: 9px;
-    height: 9px;
-}
+
 /*end form checkbox*/
 @media only screen and (max-width : 1024px) {
     html {
@@ -270,11 +341,12 @@
 		flex-wrap: wrap;
 	}
 	.header .info{
-	    width: 100%;
-	    display: flex;
-	    flex-wrap: wrap;
-	    padding: 20px 5%;
-	    margin: 0;
+		width: 48%;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		float: none;
+		margin-right: 2%;
 	    float: none
 	}
 	.header .contact,
@@ -282,7 +354,7 @@
 		width: 50%;
 		float: none;
 		margin: 0;
-		padding: 10px 25px;
+		padding: 0 20px 10px 25px;
 	}
 	.header .address:before,
 	.header .number.one:before{
@@ -292,22 +364,22 @@
 		text-align: left;
 	}
 	.header .logo{
-		width: 45%;
-		margin-left: 5%;
+		width: 25%;
+		margin-left: 2%;
 		padding-left: 75px;
 		float: none;
 	}
 	.header .logo .through-link {
 	    padding-left: 0;
-   		width: 60%;
+   		width: 100%;
 	    position: relative;
 	    z-index: 2;
 	    float: none;
 	}
 	.header .writing {
-	    width: 45%;
-	    margin-right: 5%;
-	    margin-left: auto;
+		width: 20%;
+		margin-right: auto;
+		margin-left: auto;
 	    float: none;
 	}
 	.header .nav {
@@ -500,11 +572,37 @@
 	.mob-menu-btn-wrap{
 		display: block;
 	}
+	.header .logo {
+		width: 33%;
+	}
+	.header .info{
+		width: 33%;
+	}
+	.header .first-info{
+		display: none;
+	}
+	.header .contact{
+		width: 85%;
+	}
+	.header .content {
+		padding-bottom: 20px;
+	}
 }	
+
 @media only screen and (max-width : 768px) {
+	.header .logo{
+		width: 220px;
+		padding-bottom: 10px;
+	}
+	.header .writing{
+		width: 180px;
+	}
 	.header .logo .through-link {
-   		width: 80%;
+   		width: 100%;
    	}
+   	.header .info{
+		display: none;
+	}
 	.multipromo-block .grid {
 	    display: flex;
 	    flex-wrap: wrap;
@@ -619,6 +717,12 @@
 	}
 	.left-column.tabl_column .inline-sort-list{
 		min-height: auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.left-column.tabl_column .inline-sort-list li{
+		width: 50%;
+		padding-right: 15px;
 	}
 	.tabl_column .billboard .body-board{
 		margin-bottom: 0;
@@ -626,20 +730,8 @@
 }
 
 @media only screen and (max-width : 650px) {
-	.header .logo {
-	    margin-left: 10px;
-	    width: 50%;
-	}
-	.header .writing {
-	    margin-right: 10px;
-	}
-	.header .info{
-		padding: 20px 10px;
-	}
-	.header .first-info,
-	.header .contact{
-		width: 100%;
-		padding-right: 0;
+	.header .writing{
+		margin-left: 30px;
 	}
 	.sidebar{
 		flex-wrap: wrap;
@@ -802,15 +894,20 @@
 }
 
 @media only screen and (max-width : 550px) {
-	.header .writing{
+	.header .writing {
+	 margin-left: 0; 
+	width: 100%;
+	text-align: center;
+	}
+	.mob-menu-btn-wrap{
+		flex-wrap: wrap
+	}
+	.mob-menu-btn-wrap.fixed .writing {
+		order: 2;
 		width: 100%;
-	    text-align: left;
-	    padding: 20px 10px 0 10px;
+		padding-top: 10px;
+		text-align: center;
 	}
-	.header .logo{
-		width: 60%;
-	}
-
 	.multipromo-block .card-third{
 		width: 100%;
 	}
@@ -930,13 +1027,6 @@
 }
 
 @media only screen and (max-width : 450px) {
-	.header .logo{
-		width: 70%;
-	}
-	.header .logo .through-link{
-		width: 100%;
-	}
-
 	.footer .content{
 		justify-content: flex-start;
 		padding: 20px 20px;
@@ -1084,7 +1174,14 @@
 	.assessment .work-exp dt{
 		width: 60%;
 	}
+	.left-column.tabl_column .inline-sort-list li{
+		width: 100%;
+	}
+	.right-column.tabl_column{
+		width: 100%;
+	}
 }
+
 @media only screen and (max-width : 400px) {
 	.personal-info_instr .column {
 		width: 100%;
@@ -1092,6 +1189,9 @@
 	}
 	.personal-info_instr .btn-feedback{
 		margin-right: 0;
+	}
+	.mob-menu-btn-wrap.fixed{
+		padding: 10px;
 	}
 }
 @media only screen and (max-width : 350px) {
@@ -1127,4 +1227,5 @@
 		width: 60px;
 		height: 60px;
 	}
+
 }

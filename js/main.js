@@ -27,8 +27,20 @@ mob_menu.each(function(){
             return false;
         }
     });
-})
-// $('.mob-menu .wrap-list')
+});
+
+var block = $('.mob-menu-btn-wrap'),
+    window_w = $(window).width();
+
+if (window_w <= 940){
+    $(window).scroll(function() {
+        if($(window).scrollTop() > 150) {
+            block.addClass('fixed'); 
+        } else {
+            block.removeClass('fixed');
+        }
+    });
+}
 //new funcrtion
 
 
