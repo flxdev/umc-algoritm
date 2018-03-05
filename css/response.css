@@ -113,7 +113,7 @@
 		display: none;
 		position: absolute;
 		top: 35px;
-		right: 25px;
+		right: 12px;
 		background: #ffffff;
 	}
 	.mob-menu-btn-wrap .logotype{
@@ -128,6 +128,7 @@
 		justify-content: space-between;
 		align-items: center;
 		color: #000000;
+		text-decoration: none;
 	}
 	.logotype .img-bloc{
 		width: 50px;
@@ -150,16 +151,21 @@
 		left: 0;
 		width: 100%;
 		z-index: 100;
-		padding: 10px 25px;
+		padding: 10px 16px;
 		display: flex;
 		align-items: center;
 		box-shadow: 0 10px 20px 0 rgba(54, 94, 210, .46);
+		margin: 0;
 	}
 	.mob-menu-btn-wrap.fixed .logotype{
 		display: block;
 	}
 	.mob-menu-btn-wrap.fixed .writing{
 		display: block;
+	}
+	.mob-menu-btn-wrap.fixed .phone-list-wrap{
+		display: block;
+		margin: 0 auto;
 	}
 	.mob-menu-btn{
 		display: block;
@@ -168,7 +174,6 @@
 		padding: 5px;
 		cursor: pointer;
 		margin-right: 0;
-		margin-left: auto;
 	}
 	.mob-menu-btn__item{
 		display: block;
@@ -234,7 +239,7 @@
 		padding-right: 10px;
 	}
 	.more-info-inner{
-		padding-bottom: 15px;
+		padding-top: 15px;
 	}
 	html.menu-active{
 		overflow: hidden;
@@ -295,17 +300,65 @@
 }
 
 .active-overlay_field input[type="checkbox"] + label:after {
-	content: '\2714';
+	font-family: "FontAwesome";
+	content: '\f00c';
 	display: none;
 	width: 100%;
 	width: 15px;
 	height: 15px;
-	top: 0;
-	font-size: 18px;
+	top: 1px;
+	font-size: 13px; 
 	line-height: 1;
+	text-align: center;
+}
+/*end form checkbox*/
+/* header phone in mobile */
+.phone-list-wrap,
+.phone-list-mob {
+	display: none;
+	position: relative;
+	width: 50px;
 }
 
-/*end form checkbox*/
+.phone-list {
+	display: none;
+	text-align: center;
+	position: absolute;
+	z-index: 2;
+	width: 200px;
+	right: 0;
+	top: 30px;
+	background: #fff;
+	padding: 15px;
+	box-shadow: 0 8px 20px 0 rgba(54, 94, 210, .46);
+}
+.phone-list.phone-list-active{
+	display: block;
+}
+.phone-list a{
+	display: block;
+	font: normal 1.5em/1 'MuseoSansBold';
+	text-decoration: none;
+	color: #000000;
+}
+.phone-list a:last-child{
+	font: normal 1em/1 'MuseoSansMedium';
+	margin-top: 15px;
+}
+
+.phone-list-btn{
+	cursor: pointer;
+	display: block;
+	width: 18px;
+	height: 31px;
+	margin: 0 auto;
+	background: url(../img/phone.png) 0 50% no-repeat;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+}
+/* end header phone in mobile */
+
 @media only screen and (max-width : 1024px) {
     html {
         font-size: 80%;
@@ -421,6 +474,7 @@
     .sidebar{
     	width: 100%;
     	display: flex;
+    	align-items: flex-start;
     	margin-bottom: 1.25em;
     }
     .card-category{
@@ -587,6 +641,45 @@
 	.header .content {
 		padding-bottom: 20px;
 	}
+	/* sidebar mobile view */
+
+	.accard-wrap{
+		display: none;
+	}
+	.accard-wrap.accard-wrap-active{
+		display: block
+	}
+	.card-category, .card_border{
+		width: 49%;
+		border: none;
+		padding: 15px;
+	}
+	.accard-wrap .btn{
+		bottom: 0;
+	}
+	.accard-wrap .category-list{
+		margin-bottom: 50px;
+	}
+	.accard-title{
+		position: relative;
+		padding-right: 20px;
+	}
+	.accard-title:after{
+		font-family: "FontAwesome";
+		content: '\f107';
+		position: absolute;
+		right: 0;
+		top: 0;
+		-webkit-transition: -webkit-transform 0.2s ease;
+		transition: -webkit-transform 0.2s ease;
+		-moz-transition: transform 0.2s ease, -moz-transform 0.2s ease;
+		transition: transform 0.2s ease;
+		transition: transform 0.2s ease, -webkit-transform 0.2s ease, -moz-transform 0.2s ease;
+	}
+	.accard-title.accard-title-active:after{
+		transform: rotate(180deg);
+	}
+	/* end sidebar mobile view */
 }	
 
 @media only screen and (max-width : 768px) {
@@ -596,12 +689,24 @@
 	}
 	.header .writing{
 		width: 180px;
+		margin-right: 0;
 	}
 	.header .logo .through-link {
    		width: 100%;
    	}
    	.header .info{
 		display: none;
+	}
+	.phone-list-mob{
+		display: block;
+		margin-left: 20px;
+		margin-right: auto;
+	}
+	.mob-menu-btn-wrap{
+		position: relative;
+		top: auto;
+		right: auto;
+		margin-right: 8px;
 	}
 	.multipromo-block .grid {
 	    display: flex;
@@ -735,6 +840,7 @@
 	}
 	.sidebar{
 		flex-wrap: wrap;
+
 	}
 	.card-category{
     	width: 100%;
@@ -891,23 +997,54 @@
 	.table-price.price_1 tbody tr td:nth-child(2) {
 		padding-left: 23px;
 	}
-}
-
-@media only screen and (max-width : 550px) {
-	.header .writing {
-	 margin-left: 0; 
-	width: 100%;
-	text-align: center;
+	.header .logo{
+		order: 0;
+	}
+	.phone-list-mob{
+		order: 1;
+		margin-right: 20px;
+		margin-left: auto;
+	}
+	.mob-menu-btn-wrap{
+		order: 2;
+	}
+	.header .writing{
+		order: 3;
+		width: 100%;
+		padding-left: 10px;
+		margin-left: 0;
 	}
 	.mob-menu-btn-wrap{
 		flex-wrap: wrap
 	}
-	.mob-menu-btn-wrap.fixed .writing {
-		order: 2;
-		width: 100%;
-		padding-top: 10px;
-		text-align: center;
+	.mob-menu-btn-wrap.logotype{
+		order: 0;
 	}
+	.mob-menu-btn-wrap.fixed .phone-list-wrap{
+		order: 1;
+		margin-right: 20px;
+		margin-left: auto;
+	}
+	.mob-menu-btn-wrap.fixed .mob-menu-btn{
+		order: 2;
+		margin-left: 0
+	}
+	.mob-menu-btn-wrap.fixed .writing {
+		order: 3;
+		padding-top: 10px;
+	}
+
+	.mob-menu-btn{
+		margin-left: auto;
+	}
+}
+
+@media only screen and (max-width : 550px) {
+	.header .writing {
+		margin-left: 0; 
+		
+	}
+
 	.multipromo-block .card-third{
 		width: 100%;
 	}
@@ -1193,6 +1330,29 @@
 	.mob-menu-btn-wrap.fixed{
 		padding: 10px;
 	}
+	.header .writing{
+		width: auto;
+	}
+	.mob-menu-btn-wrap{
+		margin-right: 10px;
+		margin-left: auto;
+	}
+	.phone-list-mob {
+		order: 4;
+		margin-right: 10px;
+		margin-left: auto;
+	}
+	.mob-menu-btn-wrap.fixed .phone-list-wrap {
+		order: 4;
+		margin-right: 0;
+		margin-left: auto;
+	}
+	.mob-menu-btn-wrap.fixed .mob-menu-btn {
+		margin-left: auto;
+	}
+	.mob-menu-btn-wrap.fixed .writing{
+		padding-left: 0;
+	}
 }
 @media only screen and (max-width : 350px) {
 	.card-middle .left-column img,
@@ -1227,5 +1387,14 @@
 		width: 60px;
 		height: 60px;
 	}
-
+	.header .logo{
+		width: 200px;
+	}
+	.header .logo .name,
+	.logotype .desc-block .name{
+		font-size: 2em;
+	}
+	.mob-menu-btn-wrap .logotype .logotype-link{
+		width: 190px;
+	}
 }
