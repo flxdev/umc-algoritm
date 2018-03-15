@@ -12,19 +12,9 @@ mob_menu.each(function(){
         var second = _t.find('.second-level'),
             second_item = second.find('li');
         if(_t.hasClass('visible')){
-            if(second.is(e.target) || second_item.is(e.target)){
-                console.log('qq')
-                return false;
-            } else {
-                console.log('dd')
-                _t.removeClass('visible');
-                return false;
-            }
             _t.removeClass('visible');
-            return false;
         } else {
             _t.addClass('visible').siblings().removeClass('visible');
-            return false;
         }
     });
 });
