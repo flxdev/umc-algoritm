@@ -1181,3 +1181,17 @@ if($('.header-specials').length){
       }
 	}, headerSpecials.timer)
 }
+
+if($('#nav').length) {
+    var navHeight = $('#nav').height();
+    $('#sidebar').stick_in_parent({offset_top: navHeight + 20, recalc_every: 1, inner_scrolling: true});
+    $(window).on('resize', resize);
+    function resize() {
+        var newHeight = $('#nav').height();
+        if (newHeight !== navHeight) {
+            navHeight = newHeight;
+            $("#sidebar").trigger("sticky_kit:detach");
+            $('#sidebar').stick_in_parent({offset_top: navHeight + 20, recalc_every: 1});
+        }
+    }
+}

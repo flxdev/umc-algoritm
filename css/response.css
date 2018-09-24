@@ -359,6 +359,24 @@
 }
 /* end header phone in mobile */
 
+@media only screen and (max-width : 1280px) {
+	.index-block__title {
+		font-size: 25px;
+	}
+
+	.index-block__subtitle {
+		font-size: 22px;
+	}
+
+	.index-block__text {
+		font-size: 12.8px;
+	}
+
+	.index-block__list {
+		padding-left: 40px;
+	  }
+}
+
 @media only screen and (max-width : 1024px) {
     html {
         font-size: 80%;
@@ -618,6 +636,24 @@
 		width: 100%;
 		max-width: 550px;
 	}
+	.sidebar.sidebar--index {
+		flex-direction: column;
+		width: 23.8462%;
+		margin-bottom: 0;
+	}
+
+	.sidebar.sidebar--index .card-category {
+		width: 100%;
+		margin-bottom: 1.25em;
+	}
+
+	.sidebar.sidebar--index .card_border {
+		width: 100%;
+	}
+
+	.main.main--index {
+		width: 74.6154%;
+	}
 }
 @media only screen and (max-width : 940px) {
 	.header .nav{
@@ -680,6 +716,28 @@
 		transform: rotate(180deg);
 	}
 	/* end sidebar mobile view */
+	.content-group {
+		flex-direction: column;
+	}
+
+	.sidebar.sidebar--index {
+		flex-direction: row;
+		width: 100%;
+		margin-bottom: 1.25em;
+	}
+
+	.sidebar.sidebar--index .card-category {
+		width: 49.5%;
+		margin-bottom: 0;
+	}
+
+	.sidebar.sidebar--index .card_border {
+		width: 49.5%;
+	}
+
+	.main.main--index {
+		width: 100%;
+	}
 }	
 
 @media only screen and (max-width : 768px) {
@@ -722,6 +780,9 @@
 	.multipromo-block .card-third.feedback-link{
 		width: 100%;
 	}
+	.card-map_mini {
+		flex-direction: column;
+	  }
 	.card.card-map_mini{
 		padding-left: 3.0769%;
 		padding-right: 3.0769%;
@@ -831,6 +892,12 @@
 	}
 	.tabl_column .billboard .body-board{
 		margin-bottom: 0;
+	}
+	.table-wrapper > .table-price {
+		width: auto;
+	}
+	.index-block__row {
+		flex-direction: column
 	}
 }
 
@@ -990,6 +1057,18 @@
 	}
 	.assessment .work-exp dt{
 		width: 40%;
+	}
+	.sidebar.sidebar--index {
+		flex-wrap: wrap;
+	}
+
+	.sidebar.sidebar--index .card-category {
+		width: 100%;
+		margin-bottom: 1.25em;
+	}
+
+	.sidebar.sidebar--index .card_border {
+		width: 100%;
 	}
 }
 
@@ -1353,6 +1432,9 @@
 	.mob-menu-btn-wrap.fixed .writing{
 		padding-left: 0;
 	}
+	.index-block__btn.btn {
+		padding: 17px 27px;
+	  }
 }
 @media only screen and (max-width : 350px) {
 	.card-middle .left-column img,
