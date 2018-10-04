@@ -1047,11 +1047,15 @@ span.grey {
 .content-group {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .sidebar.sidebar--index {
   float: none;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column
 }
 
 .main.main--index {

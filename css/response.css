@@ -719,11 +719,16 @@
 	.content-group {
 		flex-direction: column;
 	}
-
 	.sidebar.sidebar--index {
 		flex-direction: row;
 		width: 100%;
+	}
+
+	.sidebar-inner {
+		flex-direction: row;
+		width: 100%;
 		margin-bottom: 1.25em;
+		align-items: flex-start;
 	}
 
 	.sidebar.sidebar--index .card-category {
@@ -1061,6 +1066,9 @@
 	.sidebar.sidebar--index {
 		flex-wrap: wrap;
 	}
+	.sidebar-inner {
+		flex-wrap: wrap;
+	}
 
 	.sidebar.sidebar--index .card-category {
 		width: 100%;
@@ -1161,7 +1169,6 @@
 	.def-list dt,
 	.def-list dd{
 		float: none;
-		width: 
 	}
 	.tabs-navigation li{
 		margin-right: 20px;
